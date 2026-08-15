@@ -1,0 +1,28 @@
+{
+  "command_or_check": "deterministic identity/count/hash reconciliation in build_gates",
+  "fail_interpretation": "The ablation table is incomplete, duplicated, untraceable, or not demonstrably offline.",
+  "failed_criteria": [],
+  "gate_id": "G6_offline_stage_ablation_result_integrity",
+  "hypothesis_or_mechanism": "Every reported count is reconstructable from unique observation rows tied to frozen source hashes.",
+  "input_artifacts": [
+    "observations.jsonl",
+    "metrics.json"
+  ],
+  "metrics": {
+    "execution_scope": "fixtures_only",
+    "expected_hosted_case_count": 0,
+    "hosted_call_attempts": 0,
+    "hosted_case_count": 0,
+    "observation_count": 29,
+    "unique_case_ids": 29
+  },
+  "next_allowed_step": "bounded manuscript integration",
+  "pass_criteria": {
+    "frozen_hosted_cases": 0,
+    "hosted_call_attempts": 0,
+    "source_hash_per_included_response": true,
+    "unique_case_ids": true
+  },
+  "stage": "results",
+  "verdict": "PASS"
+}

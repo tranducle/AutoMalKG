@@ -1,0 +1,29 @@
+{
+  "check_type": "deterministic_custom_harness",
+  "fail_interpretation": "The implementation does not reliably separate OWL consistency from SWRL rule completion.",
+  "failed_criteria": [],
+  "gate_id": "G3_method_mechanism",
+  "input_artifacts": [
+    "cases.jsonl",
+    "predictions.jsonl",
+    "pellet_logs/*.log"
+  ],
+  "metrics": {
+    "consistency_status_accuracy": 1.0,
+    "consistency_unverified": 0,
+    "inferred_edges_with_support_ledger": 25,
+    "swrl_edge_precision": 1.0,
+    "swrl_edge_recall": 1.0,
+    "swrl_unverified": 0
+  },
+  "next_allowed_step": "result_integrity_and_claim_mapping",
+  "pass_criteria": {
+    "false_verified_outcomes": 0,
+    "negative_control_inferred_edges": 0,
+    "support_ledger_coverage": "all expected inferred edges",
+    "unverified_consistency_cases": 0,
+    "unverified_swrl_controls": 0
+  },
+  "stage": "semantic_reasoning",
+  "verdict": "PASS"
+}

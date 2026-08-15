@@ -1,0 +1,65 @@
+{
+  "command_or_check": "generate_round3_cc0_benchmark.py deterministic source validation",
+  "fail_interpretation": "Hosted execution would lack a governance-clean, traceable input benchmark.",
+  "failed_criteria": [],
+  "gate_id": "G0_round3_cc0_data_provenance",
+  "hypothesis_or_mechanism": "The benchmark is original, explicitly dedicated, non-sensitive, and hash-addressed before hosted calls.",
+  "input_artifacts": [
+    "./5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/author_source.json",
+    "./5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/contexts.jsonl",
+    "./5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/CC0-1.0-DEDICATION.md"
+  ],
+  "metrics": {
+    "authorship_statement_present": true,
+    "context_count": 16,
+    "documentation_ipv4_mentions": 4,
+    "entity_types": [
+      "Campaign",
+      "Indicator",
+      "Malware",
+      "ThreatActor",
+      "Vulnerability"
+    ],
+    "gold_entity_count": 38,
+    "gold_relation_count": 24,
+    "license": "CC0-1.0",
+    "negative_controls": 2,
+    "privacy_statement_present": true,
+    "relation_signatures": [
+      [
+        "Malware",
+        "AssociatedWith",
+        "Campaign"
+      ],
+      [
+        "Malware",
+        "HasIndicator",
+        "Indicator"
+      ],
+      [
+        "Malware",
+        "Targets",
+        "Vulnerability"
+      ],
+      [
+        "ThreatActor",
+        "Uses",
+        "Malware"
+      ]
+    ],
+    "reserved_domain_mentions": 4,
+    "unique_context_hashes": 16,
+    "unique_context_ids": 16
+  },
+  "next_allowed_step": "case schedule generation and G1 integrity validation",
+  "pass_criteria": {
+    "contexts": 16,
+    "license": "CC0-1.0",
+    "negative_controls": 2,
+    "personal_or_sensitive_data": 0,
+    "third_party_cti_text": 0,
+    "unique_ids_and_hashes": 16
+  },
+  "stage": "dataset_acquisition",
+  "verdict": "PASS"
+}

@@ -1,0 +1,26 @@
+{
+  "allowed_claim_boundary": "component capability, failure localization, provenance completeness, proof-ledger coverage, and production reachability",
+  "audit": "baseline_fairness",
+  "blocked_claims": [
+    "provider-native structured-output performance",
+    "factual extraction accuracy",
+    "statistical or latency superiority"
+  ],
+  "comparison_type": "cumulative offline capability ablation; not a performance leaderboard",
+  "dimensions": {
+    "compute_resources": "NOT_COMPARABLE: later stages invoke Pellet; runtime superiority claims are prohibited",
+    "implementation_status": "WARNING: JSON Schema is a local nearest alternative, not provider-native constrained decoding",
+    "same_data": "PASS: identical observation rows and response hashes",
+    "same_metrics": "PASS: acceptance, silent violation, provenance, and proof definitions are shared",
+    "same_preprocessing": "PASS: parse-only and JSON Schema use production-equivalent code-fence normalization",
+    "threat_model": "PASS: identical pre-specified synthetic contract and mechanism fixtures; no hosted inputs included",
+    "tuning_budget": "NOT_APPLICABLE: deterministic validators have no tuned hyperparameters"
+  },
+  "scientific_gates": {
+    "G1_input_parity": "PASS",
+    "G2_baseline_sanity": "PASS",
+    "G4_ablation_validity": "see G4_ablation_validity.json",
+    "G6_result_integrity": "see G6_result_integrity.json"
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

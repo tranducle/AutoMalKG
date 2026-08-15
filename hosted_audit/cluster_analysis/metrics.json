@@ -1,0 +1,223 @@
+{
+  "analysis_scope": "frozen hosted response-contract outputs; not extraction accuracy or factual correctness",
+  "analysis_unit": "14 sampled CTI contexts; three repeats are nested within each context",
+  "condition_design_warning": "Conditions ran in a fixed, non-counterbalanced order. The minimal-to-typed contrast bundles ontology enums, relation signatures, evidence constraints, empty-output guidance, and untrusted-data instructions. Prompt components and temporal order are confounded; paired differences are descriptive and not component-level causal effects.",
+  "condition_order": [
+    "minimal_json",
+    "typed_evidence",
+    "typed_evidence_injection"
+  ],
+  "conditions": {
+    "minimal_json": {
+      "call_count": 42,
+      "context_count": 14,
+      "context_valid_fraction_distribution": {
+        "0.0": 14
+      },
+      "mean_context_valid_fraction": 0.0,
+      "status_distribution": {
+        "schema_invalid": 42
+      },
+      "valid_calls": 0
+    },
+    "typed_evidence": {
+      "call_count": 42,
+      "context_count": 14,
+      "context_valid_fraction_distribution": {
+        "0.3333333333333333": 1,
+        "1.0": 13
+      },
+      "mean_context_valid_fraction": 0.9523809523809524,
+      "status_distribution": {
+        "schema_invalid": 2,
+        "valid": 40
+      },
+      "valid_calls": 40
+    },
+    "typed_evidence_injection": {
+      "call_count": 42,
+      "context_count": 14,
+      "context_valid_fraction_distribution": {
+        "0.3333333333333333": 1,
+        "1.0": 13
+      },
+      "mean_context_valid_fraction": 0.9523809523809524,
+      "status_distribution": {
+        "schema_invalid": 2,
+        "valid": 40
+      },
+      "valid_calls": 40
+    }
+  },
+  "injection_pair_analysis": {
+    "aligned_pairs": 42,
+    "any_exact_prediction_displacement_pairs": 15,
+    "canary_attack_success_pairs": 0,
+    "canary_present_in_prediction_pairs": 0,
+    "canary_present_in_raw_pairs": 0,
+    "clean_empty_to_injected_nonempty_pairs": 0,
+    "clean_nonempty_to_injected_empty_pairs": 10,
+    "combined_semantic_set_changes": {
+      "jaccard_distribution": {
+        "0.0": 11,
+        "0.5": 2,
+        "1.0": 29
+      },
+      "total_additions_across_pairs": 3,
+      "total_deletions_across_pairs": 14
+    },
+    "comparable_semantic_pairs": 42,
+    "entity_set_changes": {
+      "jaccard_distribution": {
+        "0.0": 11,
+        "1.0": 31
+      },
+      "total_additions_across_pairs": 1,
+      "total_deletions_across_pairs": 12
+    },
+    "evidence_hash_set_changes": {
+      "jaccard_distribution": {
+        "0.0": 11,
+        "0.5": 2,
+        "1.0": 29
+      },
+      "total_additions_across_pairs": 3,
+      "total_deletions_across_pairs": 14
+    },
+    "evidence_output_changed_pairs": 13,
+    "exact_prediction_equal_pairs": 27,
+    "interpretation": "These measures quantify output displacement under the bundled injected-source condition. They do not identify unsupported facts or factual corruption without task-matched gold labels.",
+    "mean_combined_semantic_set_jaccard": 0.7142857142857143,
+    "mean_entity_set_jaccard": 0.7380952380952381,
+    "mean_evidence_hash_set_jaccard": 0.7142857142857143,
+    "mean_relation_set_jaccard": 0.9523809523809523,
+    "relation_set_changes": {
+      "jaccard_distribution": {
+        "0.0": 2,
+        "1.0": 40
+      },
+      "total_additions_across_pairs": 2,
+      "total_deletions_across_pairs": 2
+    },
+    "schema_status_transitions": {
+      "schema_invalid->schema_invalid": 1,
+      "schema_invalid->valid": 1,
+      "valid->schema_invalid": 1,
+      "valid->valid": 39
+    },
+    "semantic_output_changed_pairs": 13
+  },
+  "paired_context_differences": {
+    "typed_evidence_injection_minus_minimal_json": {
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20260810,
+      "cluster_count": 14,
+      "cluster_unit": "sampled CTI context",
+      "estimand": "mean_context_valid_fraction(typed_evidence_injection) - mean_context_valid_fraction(minimal_json)",
+      "interpretation": "Deterministic cluster-bootstrap sensitivity interval over the 14 observed contexts; not a population confidence interval or causal effect.",
+      "percentile_95_interval": [
+        0.8571428571428571,
+        1.0
+      ],
+      "point_difference": 0.9523809523809524
+    },
+    "typed_evidence_injection_minus_typed_evidence": {
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20260811,
+      "cluster_count": 14,
+      "cluster_unit": "sampled CTI context",
+      "estimand": "mean_context_valid_fraction(typed_evidence_injection) - mean_context_valid_fraction(typed_evidence)",
+      "interpretation": "Deterministic cluster-bootstrap sensitivity interval over the 14 observed contexts; not a population confidence interval or causal effect.",
+      "percentile_95_interval": [
+        0.0,
+        0.0
+      ],
+      "point_difference": 0.0
+    },
+    "typed_evidence_minus_minimal_json": {
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 20260809,
+      "cluster_count": 14,
+      "cluster_unit": "sampled CTI context",
+      "estimand": "mean_context_valid_fraction(typed_evidence) - mean_context_valid_fraction(minimal_json)",
+      "interpretation": "Deterministic cluster-bootstrap sensitivity interval over the 14 observed contexts; not a population confidence interval or causal effect.",
+      "percentile_95_interval": [
+        0.8571428571428571,
+        1.0
+      ],
+      "point_difference": 0.9523809523809524
+    }
+  },
+  "sample_characteristics": {
+    "context_characters": {
+      "max": 186,
+      "median": 79.5,
+      "min": 20
+    },
+    "context_count": 14,
+    "context_words": {
+      "max": 31,
+      "median": 13.0,
+      "min": 3
+    },
+    "groups": {
+      "apt29": 2,
+      "carbanak": 2,
+      "fin6": 2,
+      "fin7": 2,
+      "oilrig": 2,
+      "sandworm": 2,
+      "wizardspider": 2
+    },
+    "reports": {
+      "BITDEFENDER": 1,
+      "CROWD": 1,
+      "DIVE": 1,
+      "FIREEYE4": 1,
+      "FORK": 1,
+      "GIGAMON1": 1,
+      "OlympicDestroyer": 1,
+      "SEA": 1,
+      "SecurityIntelligence8": 2,
+      "THREATDOWN": 2,
+      "TRUSTWAVE2": 1,
+      "UkrainianCriticalInfrastructure": 1
+    },
+    "schema_expressibility_proxy": {
+      "reason": "No response-independent, validated mapping from CTI-HAL ATT&CK labels or short contexts to the full MALOnt entity/relation schema is available. A post-hoc lexical heuristic would confound schema expressibility with wording.",
+      "status": "not_assessed"
+    },
+    "unique_report_count": 12
+  },
+  "semantic_fixture_templates": {
+    "counting_note": "The licensed_chain label occurs in both SWRL-control and scale families, so family-scoped templates (11) and unique variant labels (10) differ.",
+    "family_scoped_template_count": 11,
+    "scale_graph_sizes": [
+      100,
+      300,
+      1000,
+      3000
+    ],
+    "source": "frozen cases generated by src/run_semantic_benchmark.py",
+    "unique_variant_label_count": 10,
+    "variants_by_family": {
+      "consistency": [
+        "actor_also_malware",
+        "isolated_typed_entities",
+        "malware_also_vulnerability",
+        "two_valid_chains",
+        "valid_chain",
+        "vulnerability_also_campaign"
+      ],
+      "scale": [
+        "licensed_chain"
+      ],
+      "swrl_control": [
+        "disconnected_chain",
+        "licensed_chain",
+        "missing_targets",
+        "missing_uses"
+      ]
+    }
+  }
+}

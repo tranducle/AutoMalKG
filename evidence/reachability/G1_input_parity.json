@@ -1,0 +1,28 @@
+{
+  "command_or_check": "observation-level method-set and source-hash reconciliation",
+  "fail_interpretation": "The staged comparison changed its inputs or omitted a comparator for some cases.",
+  "failed_criteria": [],
+  "gate_id": "G1_offline_ablation_input_parity",
+  "hypothesis_or_mechanism": "All four methods receive the same response bytes and case identities; only the enabled validation/reasoning layer changes.",
+  "input_artifacts": [
+    "fixtures.jsonl",
+    "observations.jsonl"
+  ],
+  "metrics": {
+    "method_set_ok": true,
+    "observation_count": 29,
+    "source_hashes_present": true
+  },
+  "next_allowed_step": "baseline sanity evaluation",
+  "pass_criteria": {
+    "method_set_per_observation": [
+      "json_parse_only",
+      "strict_json_schema",
+      "production_canonicalization",
+      "full_automalkg"
+    ],
+    "source_hashes_present": true
+  },
+  "stage": "preprocessing_to_baseline",
+  "verdict": "PASS"
+}

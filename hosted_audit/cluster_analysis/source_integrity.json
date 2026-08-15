@@ -1,0 +1,18 @@
+{
+  "checked": [
+    {
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/cases.jsonl",
+      "sha256": "2cd6d63b5546a1da0cab8fbc462e0f7a51a6790b4a55eff0d802ea5718420ae6"
+    },
+    {
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/predictions.jsonl",
+      "sha256": "5959ed76a1460d47fe926faadc3caa82b04e526eacccfad836495b99e3625cd8"
+    },
+    {
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/raw_responses.jsonl",
+      "sha256": "4e9b686d019ecd77bfe4e2d8f3d4491bf80d4c00017141e47f84216f433ebf37"
+    }
+  ],
+  "failures": [],
+  "status": "PASS"
+}

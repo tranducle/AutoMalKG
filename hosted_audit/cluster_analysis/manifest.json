@@ -1,0 +1,110 @@
+{
+  "bootstrap_replicates": 10000,
+  "command": "python src/reanalyze_hosted_clusters.py",
+  "dependencies": {},
+  "execution_mode": "offline_only_no_hosted_calls",
+  "hash_policy": {
+    "algorithm": "sha256",
+    "manifest_self_hash": "excluded_by_definition_to_avoid_self-reference"
+  },
+  "inputs": [
+    {
+      "bytes": 200262,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/cases.jsonl",
+      "sha256": "2cd6d63b5546a1da0cab8fbc462e0f7a51a6790b4a55eff0d802ea5718420ae6"
+    },
+    {
+      "bytes": 7645,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/manifest.json",
+      "sha256": "dad9e98eb235e42e065d6d0aa5bf32ab83f76f2ef098061c24f432725b38b6e4"
+    },
+    {
+      "bytes": 201202,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/predictions.jsonl",
+      "sha256": "5959ed76a1460d47fe926faadc3caa82b04e526eacccfad836495b99e3625cd8"
+    },
+    {
+      "bytes": 143613,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/raw_responses.jsonl",
+      "sha256": "4e9b686d019ecd77bfe4e2d8f3d4491bf80d4c00017141e47f84216f433ebf37"
+    },
+    {
+      "bytes": 33314,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/cases.jsonl",
+      "sha256": "a12cadf0894d3a2a0f713be9fbc261b28fbb719ee19ea1a1bdf02babbe850ea8"
+    },
+    {
+      "bytes": 37738,
+      "path": "src/reanalyze_hosted_clusters.py",
+      "sha256": "dd02cc81452d5a3fa924bc5dc7dfa05546701f21d61f938ebb139cbcdbb1e36d"
+    }
+  ],
+  "java": {},
+  "os_hardware": {
+    "logical_cpu_count": 8,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "outputs": [
+    {
+      "bytes": 2830,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/README.md",
+      "sha256": "f375ce25929dd11e5f1ba5b6467d39fa779072d05e0a5eaa0c3fc6861387ea3b"
+    },
+    {
+      "bytes": 10855,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/context_outcomes.jsonl",
+      "sha256": "7a9805e8c2b5637f9f1e9c312dbedf7cd4bbc5f930aa25982a10f55b0c123559"
+    },
+    {
+      "bytes": 1775,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/gate_G6_clustered_reanalysis.json",
+      "sha256": "dd549e1b69ec9e358e1f74062ed590d91531e84b3fb85d8685a32bfe2fd66d0e"
+    },
+    {
+      "bytes": 1122,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/gate_G8_claim_permission.json",
+      "sha256": "cb5044700188002726e4803a80aedaed182846243ba31ac9b488fcbe8b8a9695"
+    },
+    {
+      "bytes": 66766,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/injection_pairs.jsonl",
+      "sha256": "213fce7d6bbb5ee3209b260c336cb22c464bc0700dcb86da13fadb540165e9c2"
+    },
+    {
+      "bytes": 7425,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/metrics.json",
+      "sha256": "71dfec3ba36f970f80b54b71ebb40546d3e7a32d9c30fde89b7efdbe591c3072"
+    },
+    {
+      "bytes": 4573,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/sample_characteristics.jsonl",
+      "sha256": "fdb1c2f6e8d209ea969a81358eebbd5c4b91e706cd33c62d8bfd85b24fd1676d"
+    },
+    {
+      "bytes": 674,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/source_integrity.json",
+      "sha256": "c8c98935215485be536eb441e02e2daeedcd11e8133447bc34dc083eaca36086"
+    }
+  ],
+  "project_git_commit": "c233a33960290fab4b3b2a1ded95b4b7111ae77b",
+  "provider": null,
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.5"
+  },
+  "resolved_model": null,
+  "run_id": "hosted_clustered_reanalysis_20260809",
+  "schema_version": "1.0",
+  "seed": 20260809,
+  "semantic_run": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive",
+  "source_run": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z",
+  "timestamps": {
+    "finished_at": "2026-08-09T22:40:22+00:00",
+    "started_at": "2026-08-09T22:40:22+00:00"
+  }
+}

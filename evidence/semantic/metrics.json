@@ -1,0 +1,85 @@
+{
+  "acceptance": {
+    "all_non_warmup_cases_attempted": true,
+    "verdict": "PASS",
+    "zero_false_verified_outcomes": true
+  },
+  "consistency": {
+    "attempted": 50,
+    "confusion_matrix_inconsistent_is_positive": {
+      "fn": 0,
+      "fp": 0,
+      "tn": 25,
+      "tp": 25
+    },
+    "fnr": 0.0,
+    "fpr": 0.0,
+    "status_accuracy": 1.0,
+    "tnr": 1.0,
+    "tnr_exact_95_ci": [
+      0.8628148284692875,
+      1.0
+    ],
+    "tpr": 1.0,
+    "tpr_exact_95_ci": [
+      0.8628148284692875,
+      1.0
+    ],
+    "unverified": 0,
+    "verified": 50
+  },
+  "local_scaling": {
+    "100": {
+      "all_expected_edges_observed": true,
+      "attempted_repetitions": 10,
+      "failure_count": 0,
+      "iqr_ms": 261.25901,
+      "median_ms": 986.4912915,
+      "p95_ms": 1239.5918023,
+      "verified_repetitions": 10
+    },
+    "1000": {
+      "all_expected_edges_observed": true,
+      "attempted_repetitions": 10,
+      "failure_count": 0,
+      "iqr_ms": 510.0560102500001,
+      "median_ms": 1785.9126665,
+      "p95_ms": 2324.8283525999996,
+      "verified_repetitions": 10
+    },
+    "300": {
+      "all_expected_edges_observed": true,
+      "attempted_repetitions": 10,
+      "failure_count": 0,
+      "iqr_ms": 448.2949797499999,
+      "median_ms": 949.3824999999999,
+      "p95_ms": 1250.4623916,
+      "verified_repetitions": 10
+    },
+    "3000": {
+      "all_expected_edges_observed": true,
+      "attempted_repetitions": 10,
+      "failure_count": 0,
+      "iqr_ms": 572.7702807500004,
+      "median_ms": 3808.1115,
+      "p95_ms": 4550.26961425,
+      "verified_repetitions": 10
+    }
+  },
+  "observation_policy": "Metrics are computed only from predictions.jsonl; UNVERIFIED is never recoded as success.",
+  "swrl_controls": {
+    "attempted": 50,
+    "edge_confusion_matrix": {
+      "fn": 0,
+      "fp": 0,
+      "tn": 25,
+      "tp": 25
+    },
+    "edge_f1": 1.0,
+    "edge_precision": 1.0,
+    "edge_recall": 1.0,
+    "inferred_edges_with_support_ledger": 25,
+    "unverified": 0,
+    "verified": 50
+  }
+}

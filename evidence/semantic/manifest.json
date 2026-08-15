@@ -1,0 +1,827 @@
+{
+  "case_parameters": {
+    "consistency_cases_per_class": 25,
+    "scale_repeats": 10,
+    "scale_sizes": [
+      100,
+      300,
+      1000,
+      3000
+    ],
+    "swrl_controls_per_class": 25
+  },
+  "command": "/opt/homebrew/opt/python@3.14/bin/python3.14 ./src/run_semantic_benchmark.py --output-dir Papers/2026_JCST-AutoMalKG/5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive --seed 20260809 --consistency-cases-per-class 25 --swrl-controls-per-class 25 --scale-sizes 100,300,1000,3000 --scale-repeats 10 --java /opt/homebrew/opt/openjdk/bin/java",
+  "dependencies": {
+    "owlready2": "0.50",
+    "scipy": "1.17.1"
+  },
+  "experiment_ids": [
+    "E2",
+    "E3",
+    "E8-local"
+  ],
+  "gate_interpretation": "PASS",
+  "hash_policy": {
+    "algorithm": "sha256",
+    "manifest_self_hash": "excluded_by_definition_to_avoid_self-reference"
+  },
+  "inputs": [
+    {
+      "bytes": 5209,
+      "path": "src/contracts.py",
+      "sha256": "6d7d7cc9e40d2e555588ee4b671193ccd3eed0546f58859accde93a556b7a263"
+    },
+    {
+      "bytes": 8011,
+      "path": "src/experiment_support.py",
+      "sha256": "d9a7e86ac37f468f462cabb26a88e7d57e13000581e122660979283e81ebd78c"
+    },
+    {
+      "bytes": 19593,
+      "path": "src/extraction.py",
+      "sha256": "bb6ed9b0780bf58cf3b1649d58ea0bd5b54206a95671e95a3bb976f6b6047254"
+    },
+    {
+      "bytes": 13399,
+      "path": "src/reasoning.py",
+      "sha256": "7aec580f8e5c1389eac78a97a5b7ab547a102ceebcfe0a7dcb5cef9547a678e0"
+    },
+    {
+      "bytes": 27139,
+      "path": "src/run_semantic_benchmark.py",
+      "sha256": "e61dc037a3b8a07f18f179ccc5a1c871a21fd111b1260272e82756f1626d1930"
+    }
+  ],
+  "java": {
+    "attempts": [
+      {
+        "command": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java -version",
+        "output": "openjdk version \"26.0.1\" 2026-04-21\nOpenJDK Runtime Environment Homebrew (build 26.0.1)\nOpenJDK 64-Bit Server VM Homebrew (build 26.0.1, mixed mode, sharing)",
+        "path": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "returncode": 0,
+        "status": "ok"
+      }
+    ],
+    "selected": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java"
+  },
+  "os_hardware": {
+    "logical_cpu_count": 8,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "outputs": [
+    {
+      "bytes": 902,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/G3_method_mechanism.json",
+      "sha256": "64a423379d88ed2d4cdc86c4f8b9bc423dfca5475d68ca9b5f8fcd99fc8b03ec"
+    },
+    {
+      "bytes": 1009,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/README.md",
+      "sha256": "76310c46c22cdc8f561c1cfaab67c53b02eb9d1de9c32a8b42c82292103aff4a"
+    },
+    {
+      "bytes": 33314,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/cases.jsonl",
+      "sha256": "a12cadf0894d3a2a0f713be9fbc261b28fbb719ee19ea1a1bdf02babbe850ea8"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/failures.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2033,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/metrics.json",
+      "sha256": "70f2202ae15aa0b4b533d8871fb318c672ebe54c10e5cc7f8cf5c36d88a6ebc9"
+    },
+    {
+      "bytes": 3045,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-000.log",
+      "sha256": "e60d68d7f328240c6ed71e04f00f5c37f13460ab936845662821e21f7238e04e"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-001.log",
+      "sha256": "43690e7b0e473cfffc2a4910a7ffaf5f9f6c1e079c73ace88b0a5b6c905adbe0"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-002.log",
+      "sha256": "4af0dc37bdb3422cf92a3402715183f43a20ad115101473ff352bb28c929837d"
+    },
+    {
+      "bytes": 3047,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-003.log",
+      "sha256": "7ef97b3d2634c6968c742ef5cfa92a6e4f3ec13ddd25a7f53e69a9c795ee2561"
+    },
+    {
+      "bytes": 2334,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-004.log",
+      "sha256": "8efaeee444f6f1224708143f0a04a333c20496e100b1e93775f7a80d95acfede"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-005.log",
+      "sha256": "8e9124c4cf04c53a9418b6f986ded1e741fd3d5374aec18eb8b5d49c6c6f62b5"
+    },
+    {
+      "bytes": 3046,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-006.log",
+      "sha256": "efe75d53123b7935de778975e6d421e5c05a7ac8014b7d91f037f2019e2869b5"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-007.log",
+      "sha256": "f6e068998565eccb508cf86c41ae4b24f54db118283c78c1397b28965dc05629"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-008.log",
+      "sha256": "feb02f0441f7d88c133186b39cc33e7f4e319222e0a95a576d9af7c79ae1d1a2"
+    },
+    {
+      "bytes": 3046,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-009.log",
+      "sha256": "cf2d37cbe98efe32027092a926a24a31dac1daf55d17706960ced42ee0f7642e"
+    },
+    {
+      "bytes": 2334,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-010.log",
+      "sha256": "f8495a1b850162a59c0daa6209ce18c4e7aff9e6b9b00f1f5f87b68c019955db"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-011.log",
+      "sha256": "b3f09aab1d49dbef1f68bcd036530f351c098f021c005c3590ab8d7b24ed82b2"
+    },
+    {
+      "bytes": 3046,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-012.log",
+      "sha256": "1a3fc6cac8c2cdfdf7d84a5593dac0e7fc5d124a63e9eca1dcac263dd6737f5c"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-013.log",
+      "sha256": "1279a77a6ae02d6bd2e6990043585dd81e5a06fa1bd025b6ee46a61b357dc05f"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-014.log",
+      "sha256": "a898ceb4ce5da84b9b6a4f4ef4d6a9ec593f35c190c43e710c034229511d9b31"
+    },
+    {
+      "bytes": 3045,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-015.log",
+      "sha256": "74443471c2ee50a6d67bdb18508095f12dfd4eda0759cf815b401dfe92e481b3"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-016.log",
+      "sha256": "401a0171815ff86c7a3d70bf396271a234fc458b2a96ec90a040a72125351aa0"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-017.log",
+      "sha256": "896bd72594484ad6e04f1095ae1e8bcd0fc79efb35cc5566f2cde61a0c35c999"
+    },
+    {
+      "bytes": 3046,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-018.log",
+      "sha256": "cb73c792e3168a46102ea0779715bd3963f304a7c986afe0f34897ca662f9846"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-019.log",
+      "sha256": "58a5909a744673c08c5312ccfcb120b53d6dbc4e3f015fab540e46027fbeb771"
+    },
+    {
+      "bytes": 3758,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-020.log",
+      "sha256": "d051cb858f24d58e86080c89b2d19de3187463038d11cab1c2430691c913f64c"
+    },
+    {
+      "bytes": 3046,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-021.log",
+      "sha256": "7f03d210e3f68944abe2f2930515cbb79a1827f7e8e66c3fb238e537a5d89ffd"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-022.log",
+      "sha256": "b0bbb7a2b56b3e92ec9622ecd6aab5a3c0d82deb84447fc87dc1af0e72455014"
+    },
+    {
+      "bytes": 3759,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-023.log",
+      "sha256": "ac88054930bc60ef59238548a880b0a95781a078e744508ec1938876446f38f6"
+    },
+    {
+      "bytes": 3045,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-consistent-024.log",
+      "sha256": "c96598190ba0c520270eb006836049bf5c21c92ae5a7c9016ef814214da77699"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-000.log",
+      "sha256": "5096d38d4d6e96c9b3468c98041b5c85ff8a240c1340b7f44857a39b6bd57727"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-001.log",
+      "sha256": "29c5b4532b3dc2aeabe355493ad751aa83150bfb54d87647c0544c7d3195a278"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-002.log",
+      "sha256": "a5dd9dd63f321c8af7a32c8ecb838e18ce7a4dcb366df3569f861b5fa9c59d6d"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-003.log",
+      "sha256": "857bddcb01e9534422e31851230c557ec6a4b052bfb2dd05766808cdf905cb0b"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-004.log",
+      "sha256": "f854f7d66ba82316cd15b2f879468aef2b545e15473dbb2a2566141169df69fa"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-005.log",
+      "sha256": "bc472f4cdfe5cf7e09be84cbfe2a8b6f7555ca7b6888a332b4939e67cafae845"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-006.log",
+      "sha256": "ca6c5cc55ca4cd294a4f8080ce9f8f88681faa7c6f6c85f90761e31fde9c71e5"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-007.log",
+      "sha256": "f3b6e57756cacc711238e85bb03347089541c1d8035384282b5d9785bcd66cd0"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-008.log",
+      "sha256": "1e034a35e7e94cf8317cb9369babb0604be87ab0ef84462406d82a8dc4a73c71"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-009.log",
+      "sha256": "b31e0ac1b1b0e2fe5e79715884e27229b3d5ad6e9824acb9faa597839f4016c6"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-010.log",
+      "sha256": "3ee70416145ecec3b22e4b26fed9115818b927a321c404b98e1e5abe0ed4f83b"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-011.log",
+      "sha256": "57f316e29d19918055e7ad49b46f6b9bb3d02f882de66081933f84fa4b4b3ae2"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-012.log",
+      "sha256": "153aa62c7943a25ba94a14855866ea511a3428c4ca0b1cd0b3d761354c4f0852"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-013.log",
+      "sha256": "7b649b554ee80122de08f02bdd0f07dcbae7ca8f899c3edcb9a8250e0b53a1e8"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-014.log",
+      "sha256": "787aadae88c629796443af6dc6d5fe69eb1eaea206295ba48871eac8ce52c6be"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-015.log",
+      "sha256": "54bd868635ad444ffbcb11ad759dca0f48a28d3c51a9976442f17018caa89783"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-016.log",
+      "sha256": "a9e80219e1623fe1d4ea0fb050b5510b9f39851a3c3a59275ee65f690ef40163"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-017.log",
+      "sha256": "825ee77b707581aca86527dfc12d19f28b425214e69329c58487566aa74829ba"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-018.log",
+      "sha256": "48a5b3933f4c5554f2431613d5c6acb8b24eaad5be41caf1d578e361b3661599"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-019.log",
+      "sha256": "a6d3ff2818e85bafb8c32617c04a9295873cabfb1b723ae6ebd52d810861665b"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-020.log",
+      "sha256": "4ae422ace9f20561f0eeab8b5e22f91d108e18821f2bee0d8125cfea8d0dd449"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-021.log",
+      "sha256": "9cdfad551216b90c6eb8e7ce8b0aed305fb6d8b6763cc7bd9e5dc8fbd23418f4"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-022.log",
+      "sha256": "83c3574055b7884167517996d7ea2c9aeadb1e48371334f9f857d495ba45000f"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-023.log",
+      "sha256": "19e8dd06f658587c2445dbaa393248b494c8999478a2c84f1a63a8879efe69c3"
+    },
+    {
+      "bytes": 2305,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/consistency-inconsistent-024.log",
+      "sha256": "a55c9ddc4fb809e202cd42ab543c105c4bdba46fc580d3abef83f2bab6c356b3"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r00.log",
+      "sha256": "7ffdcce4e50e3d0cdae0f2e20cdb6aa58fa12b3e2f8001cbf032667975da3004"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r01.log",
+      "sha256": "b348ed6d047d106219fae1e38e9007a41cab59eed83f5d1ff40d4506afc9ff87"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r02.log",
+      "sha256": "0470ba61acf0d53fac0c00f9b6d83c2e5c474a78a2a2621fa40f017902548014"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r03.log",
+      "sha256": "19891ac268a197f0d575abe8a34a19280d45aa90ab5218e71f4315ec7a8b8d19"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r04.log",
+      "sha256": "331f64f177c610667702095e07ff197a6f484442709e5deb2e8fa61960abd527"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r05.log",
+      "sha256": "d23a9776c6a7421c9457f3e0d5c782aa2647b7855cc42137f0eeb7fd9c5b8e29"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r06.log",
+      "sha256": "6c20f433689cfee8d5d2faad265c6256b3289da13541a55d484f6d473627d7d1"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r07.log",
+      "sha256": "5b72ab5149e9ad2120c950526e25ba0b74b40e275d69f184ccb17a8f4916de82"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r08.log",
+      "sha256": "b95b9faeb01948006edd2a94a35c4cc060bd9cdef263736615234268fbde0897"
+    },
+    {
+      "bytes": 67757,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0100-r09.log",
+      "sha256": "dff6742e565b74f87e794c5977daba0d06299abf17ad5e352fc233c52777c679"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r00.log",
+      "sha256": "7c3ae52a1fa5a7b171c84526c5b827e1d2cdca4f0e088dc4caa4f50f69faab99"
+    },
+    {
+      "bytes": 200355,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r01.log",
+      "sha256": "7e732acb61659e353d45b52dfa89c6ae9f9665cdd42359a01ebe75e867ff78dd"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r02.log",
+      "sha256": "c4ef16d15c0cef258dc36818fa8002b617ab84e2d0e1b96effeffa03d8839c71"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r03.log",
+      "sha256": "f7f00b0ab21ef95f50af4692dcc71f3ecc7625e174857b9905dabd3ce4258bcc"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r04.log",
+      "sha256": "edeab3ad324ec3ab0d1b4cce6dea97edf9a621348bdb0327d90401d866c9935d"
+    },
+    {
+      "bytes": 200356,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r05.log",
+      "sha256": "a50f54d50910a3ed7add16bf6750d4dd230ca5ddcc2e5c57cc164bb622345f6e"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r06.log",
+      "sha256": "42282226ab539954dabc0380a20378e10afc3c5270c2eda8ad7f7b346716dff5"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r07.log",
+      "sha256": "fcd81a2fca902060c7f037312162bee3219b0a25a6f9b4fdf3c25a438729b97a"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r08.log",
+      "sha256": "012e7466f80c0132afaee55d736415106faa6357000443821aca691f5175a2fd"
+    },
+    {
+      "bytes": 200357,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n0300-r09.log",
+      "sha256": "7e1fbd5ec34f1e16f897d21a0ce0179fe695e6f309ad85fe421a995551cf3648"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r00.log",
+      "sha256": "408e22d4b3f51a3e1dfdaf46d66cadda74910ff5e88e8d458e9cf6d9e7ceac38"
+    },
+    {
+      "bytes": 664458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r01.log",
+      "sha256": "a8b99848085bbf3dd1b60ba95140e8b0421e21c9b8919014e78d705cc1d6d0bc"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r02.log",
+      "sha256": "fe78bfb1dbb4773dd1da691b45baaced85d680b81a06bf297b38c0e2592091f1"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r03.log",
+      "sha256": "863145fcd6e7b0d615aab316eebc8c74cc0c06b97eae304df2cfe9e950ae2d61"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r04.log",
+      "sha256": "ced786292a8d55b8148f1af8d8383625d57646489157faf547ee06aaf89520ac"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r05.log",
+      "sha256": "030503f568b13cfec0c0459d267292cfde663e4cd00428380d0d1b42c642eebd"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r06.log",
+      "sha256": "87dd9c44cc550c06cb9b1a7f9d8fa41a75e021144c4800101cabbc1890c6aef1"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r07.log",
+      "sha256": "83eef4abb1e5a601c795519b09afe0c545acfd46c105db20a2808ff462f1ec68"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r08.log",
+      "sha256": "eea3d93acd35ce14aa27255d989bb8c60f2b2ec1c148e884f34ed5f2139e03a0"
+    },
+    {
+      "bytes": 664459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n1000-r09.log",
+      "sha256": "87e25ab786f0ef07f7251af4b076c3e0201a9f6fbd98eb5188a61266b8cf5b58"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r00.log",
+      "sha256": "bd97c02ea7d4171680a29daa346445129bbfa4e231fc09f32b369ec9059febe1"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r01.log",
+      "sha256": "dccaccf067f2ce8ca555bf9b1f9f00163371130ef26404c164e0c6a302919ca9"
+    },
+    {
+      "bytes": 2006459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r02.log",
+      "sha256": "3dd4573742f29d75c2021f50f525bd57a043eaca5866279ba633ac7ff9a06c2a"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r03.log",
+      "sha256": "d85215f6a6fc0dc7f90895c3165d8eeb5e724daefa4f5524e0fb5271617a18f1"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r04.log",
+      "sha256": "2c70d38061f7cc93be9fe567d6299b8ac796075db9461844c7439eabf639a882"
+    },
+    {
+      "bytes": 2006459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r05.log",
+      "sha256": "08a1994ad7e60ad2c056c9488b76680aec25cc247af1aa5d656a9a1c5458d0a1"
+    },
+    {
+      "bytes": 2006459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r06.log",
+      "sha256": "d739eb4055fa03af5bf5d6dadff2e4ad06459cb8d8191509849842484a9944ea"
+    },
+    {
+      "bytes": 2006459,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r07.log",
+      "sha256": "df94ae210030a8e4b6be70746c3984f6513609c43b3d2e38a525bd7726aff757"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r08.log",
+      "sha256": "84f1447d75ccfbb2f81d907be6085bd62e74bbead35e20e7622895de9806bb19"
+    },
+    {
+      "bytes": 2006458,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/scale-n3000-r09.log",
+      "sha256": "40342847dd38c998ad28fe121966f69d58cf9e9893ee8448cd5eeb2bedf3f6cc"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-000.log",
+      "sha256": "513f2aba909cf498f77d8daa1c9b37d0d6499cf8d7f53be4a06705068e50c0bf"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-001.log",
+      "sha256": "d7b8d364ec3c1b2ab591e0044ffcfb4577f46ca2f740ccd470310762137e4be5"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-002.log",
+      "sha256": "5be1d6db4035e28debd2ebc7f11433f1b6270083bab7e51464a6dbbfc97df3d8"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-003.log",
+      "sha256": "59c171b14404f27bdb54b6a0e46ab6d409d61889ef91ef541745764fe177f540"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-004.log",
+      "sha256": "6f826e20bd1d401c13b41bb2688934d8a60a2fb21f6340d2806af2eb6d66f8cb"
+    },
+    {
+      "bytes": 2336,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-005.log",
+      "sha256": "441ab707ef296c6626871ea54f64c5101f302f9bdb228bedab951be1c5606f20"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-006.log",
+      "sha256": "0c21512516d45ce33cc47fd9dc4a758f9c270bc36449a882d4603599298fdbff"
+    },
+    {
+      "bytes": 2334,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-007.log",
+      "sha256": "1636ae8b6df061b133eda81ac21c8c676e08cee510f01f989dcba3d12aa56e3e"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-008.log",
+      "sha256": "a59cda721d90bbf4d2e88645d6f09c76ba94927e595520ff51d124f896e90de0"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-009.log",
+      "sha256": "c13ddceb1e3f1149c4b75566eefba784ca2df158543fc8e45b614c8068504240"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-010.log",
+      "sha256": "74224ce393605ab4cce5678a5b826b7f0ae2e46610ca865262373d103b60288a"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-011.log",
+      "sha256": "be35f13aa0e22a58f61a007268297d5e71cdfcececec868ea468a8c4e6885021"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-012.log",
+      "sha256": "5a55b2bc6b61afa26ab52cf23f5129afa7219733a84e942210c4870d169859ad"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-013.log",
+      "sha256": "c21d63fe2dd03356f3ba16a52a7ada4adb265ed06b04d596ebd2836011616f65"
+    },
+    {
+      "bytes": 2334,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-014.log",
+      "sha256": "c960f8b95b0826799ae21d08e504a0b6d29746e8325e505819007f35045534d6"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-015.log",
+      "sha256": "ac18edf2216e232f6df6dc4a56b795527ad67bb569905a11cdd745016429e76e"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-016.log",
+      "sha256": "69413dc2a8388228510a95f412719b57d40960371a174a11657fcae17a2c9ab2"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-017.log",
+      "sha256": "81d5dc4bf0913e25fa895ca9a92d0a707d89e5c00c4f4096eb25166c94d53dc2"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-018.log",
+      "sha256": "9b24f03ca0135efebe93adf9f19667c3830b23bee41ce6723893c35ef4305a14"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-019.log",
+      "sha256": "7b0db2a8f6610fce5e2ae3c86f2d90cdac94f304fc0b58f895e40842810c7f6c"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-020.log",
+      "sha256": "fbb8413b8ac777cefe65f1011dbf3f6a52073474f27842823a8e31a711c8b6fb"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-021.log",
+      "sha256": "d3b434b3adbb11d1bc9e085af3eb6c2b3b87928a828d9cc00e97fab5df48ffd0"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-022.log",
+      "sha256": "1636bd66a7514a2a9ef48b05fc9aba7fbae55152ea55ee06005cf9430b430a19"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-023.log",
+      "sha256": "ccb711d04a5bf601690241d0057e0e009d4bfa2457597be8d7e8b2dc0f855d68"
+    },
+    {
+      "bytes": 2335,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-negative-024.log",
+      "sha256": "468b584ab33541146dc7075f42a7d7529360e80ab05f4e0ee7331b90198f4a28"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-000.log",
+      "sha256": "971671b3d43864a693533abf956c2ed500f24c6e80261a98af01480a1663401c"
+    },
+    {
+      "bytes": 2993,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-001.log",
+      "sha256": "b2d5acb7cc7abc016901a81636ffe3fa1ad5e9b5a661282a52140edff0b81cf7"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-002.log",
+      "sha256": "2657d9772ad8f900b246d1a8a2ed24ec97254039c3ace5960854e93261a87a96"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-003.log",
+      "sha256": "a65bd08a7a62289f9afd58dfc6eb3a1f52bed078dd8300344d002bbc67989cac"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-004.log",
+      "sha256": "ac52a554a90a28f8863eba90dcc3d75cea98ea53f3e1d628dc9491309a66429f"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-005.log",
+      "sha256": "ed90d89cc0bbd82012c6bc0b27148d90f54aec029831300d5c7bd08a108185cb"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-006.log",
+      "sha256": "fd0116a52f92fc98e6961b80a704b3c75a0a146ee7a2c21425542c3d5543f617"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-007.log",
+      "sha256": "6205d97524b2452712ce8bee46013e8377e7884edf2be7331d2cb18fbcf1745e"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-008.log",
+      "sha256": "ba8a842d10544ecd3839d2c277698ce5013c7ab45e13f0a9a0e88214e1beed4d"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-009.log",
+      "sha256": "a9639abfc995ebb1f1cc65f8525de1f33ee6bd540a6e6dbeb9d9d4fa75e6e063"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-010.log",
+      "sha256": "f2521cdad7b686a9a9ceb90d68534bcae80b43a20336ea943c0ebb48a061a9d0"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-011.log",
+      "sha256": "8311e0c31d18034997875f65801172cd79962fae11b11040eeeab131057206a8"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-012.log",
+      "sha256": "21aa88fc3edd5e6c10e60ce88294906b42bc4305c9984fe22fdb01e943c3ee54"
+    },
+    {
+      "bytes": 2993,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-013.log",
+      "sha256": "3181343cd63801aac640da7e4ac3f30171674433f1ec6f8d222ab8225bac3924"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-014.log",
+      "sha256": "8d5610170c0dde5fefbed85adecda72083b8d2bd8e37ed1c529f07e17bda8155"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-015.log",
+      "sha256": "a7e38f506429939787ec3aea63603405c690ae4ffb0cc794b60ccfb1b78303b5"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-016.log",
+      "sha256": "7077ea01ba0c9346c8799586ce94324690feb506775e1b0651e973e21184da18"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-017.log",
+      "sha256": "694f6ba5f9da1aa43a320b7a94822358cdde127697c60c7f4f0860c781199db4"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-018.log",
+      "sha256": "c5440a9c515e7e271a670d1cd769b415b71facd06ca64d0239858d60832f2c00"
+    },
+    {
+      "bytes": 2993,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-019.log",
+      "sha256": "f0c04e354359fd302bf9f73149bb6d341207b715c6fc0c81b492c876a703a392"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-020.log",
+      "sha256": "31e2fe50cbf150197d6af982047c8d1cd5a41cab7859fdf9792f77a0154a0f8a"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-021.log",
+      "sha256": "bb3f8b97729add1378d4030738c9db3c9492f84dca2ce9a4819acfb8978764a4"
+    },
+    {
+      "bytes": 2990,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-022.log",
+      "sha256": "a2b432d4eb712e1573d4d1d6cf070cac97af85354a232842d0980745c0da9680"
+    },
+    {
+      "bytes": 2993,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-023.log",
+      "sha256": "a1a1cb329ef9fcc029913d6c4bc3f97440589dd6b88d358ad176f8c7411243c2"
+    },
+    {
+      "bytes": 2992,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/swrl-positive-024.log",
+      "sha256": "4cb3ac9178efb668319e8e4cfa72336f983c2bec8d24145fe725fc28325b909b"
+    },
+    {
+      "bytes": 2998,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/pellet_logs/warmup-scale-n0001.log",
+      "sha256": "5e1777e13a54818e4ac0f6a6df18ccc35ead0ba22e93db9489d50d50fdfab608"
+    },
+    {
+      "bytes": 40627661,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/semantic_benchmark_seed20260809_comprehensive/predictions.jsonl",
+      "sha256": "447ac6dc5ce270920c3a193164cf6e5941b4dea489aa66bafdeed064d54a4270"
+    }
+  ],
+  "project_git_commit": "c233a33960290fab4b3b2a1ded95b4b7111ae77b",
+  "provider": null,
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.5"
+  },
+  "resolved_model": null,
+  "run_id": "semantic_benchmark_20260809T210834Z",
+  "schema_version": "1.0",
+  "seed": 20260809,
+  "timestamps": {
+    "finished_at": "2026-08-09T21:11:19+00:00",
+    "started_at": "2026-08-09T21:08:34+00:00"
+  }
+}

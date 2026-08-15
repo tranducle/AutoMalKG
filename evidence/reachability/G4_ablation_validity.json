@@ -1,0 +1,26 @@
+{
+  "command_or_check": "deterministic ledger reconciliation in build_gates",
+  "fail_interpretation": "The staged comparison does not isolate the intended contract or a semantic fixture disagrees with its pre-specified expectation.",
+  "failed_criteria": [],
+  "gate_id": "G4_offline_stage_ablation_validity",
+  "hypothesis_or_mechanism": "Cumulative local stages isolate validation, provenance, reasoning, and proof-ledger capabilities on identical inputs.",
+  "input_artifacts": [
+    "fixtures.jsonl",
+    "observations.jsonl",
+    "stage_reachability_matrix.jsonl"
+  ],
+  "metrics": {
+    "full_pipeline_silent_acceptance": 0,
+    "hosted_call_attempts": 0,
+    "known_violation_fixtures": 26,
+    "reachability_fixture_failures": 0
+  },
+  "next_allowed_step": "bounded offline ablation reporting",
+  "pass_criteria": {
+    "full_pipeline_silent_acceptance": 0,
+    "hosted_call_attempts": 0,
+    "reachability_fixture_failures": 0
+  },
+  "stage": "ablation",
+  "verdict": "PASS"
+}

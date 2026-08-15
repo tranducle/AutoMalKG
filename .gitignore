@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Run outputs (regenerate locally; never commit evidence runs)
+reproduced_runs/
+runs/
+
+# Secrets and local state
+.env
+.env.*
+.DS_Store

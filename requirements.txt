@@ -1,0 +1,13 @@
+# Direct dependency constraints for the AutoMalKG anonymous artifact.
+# Not a transitive lock: evidence-bearing runs must record the interpreter
+# version and an exact `python -m pip freeze` in the run manifest.
+# Java is an external system dependency required by Owlready2/Pellet; it is
+# not installable through pip and must be available on PATH for reasoning runs.
+jsonschema==4.26.0
+matplotlib==3.10.8
+openai==2.29.0
+owlready2==0.50
+PyMuPDF==1.28.0
+requests==2.34.2
+scipy==1.17.1
+pytest==9.0.2

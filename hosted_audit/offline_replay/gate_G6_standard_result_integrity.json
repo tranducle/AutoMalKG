@@ -1,0 +1,39 @@
+{
+  "fail_interpretation": "Per-case replay runtimes are missing, non-finite, or outside the declared execution bound.",
+  "failed_criteria": [],
+  "gate_id": "G6_hosted_end_to_end_replay_runtime_integrity",
+  "input_artifacts": [
+    "./5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/stage_ledger.jsonl"
+  ],
+  "metrics": {
+    "metric_columns": [
+      "runtime_seconds"
+    ],
+    "metric_summaries": {
+      "runtime_seconds": {
+        "all_identical": false,
+        "count": 126,
+        "max": 0.7116569999925559,
+        "mean": 0.12800702251508253,
+        "min": 0.00010108300193678588,
+        "perfect_count": 0,
+        "unique_values": 125,
+        "zero_count": 0
+      }
+    },
+    "rows_total": 126,
+    "seed_count": null
+  },
+  "next_allowed_step": "bounded_integration_reporting",
+  "pass_criteria": {
+    "all_identical": "warning only",
+    "metric_columns_present": ">= 1 numeric metric column",
+    "metric_range": "0.0 <= metric <= 120.0",
+    "min_rows": ">= 126",
+    "min_seeds": "not required",
+    "min_values_per_metric": ">= 126"
+  },
+  "stage": "offline_pipeline_replay",
+  "verdict": "PASS",
+  "warnings": []
+}

@@ -1,0 +1,37 @@
+{
+  "command_or_check": "deterministic fixture acceptance-distribution check",
+  "fail_interpretation": "A comparator is degenerate on the failure/control ledger or the full contract silently admits a known violation.",
+  "failed_criteria": [],
+  "gate_id": "G2_offline_baseline_sanity",
+  "hypothesis_or_mechanism": "Each cumulative comparator accepts valid controls and rejects at least one failure fixture; the full pipeline rejects every pre-specified violation.",
+  "input_artifacts": [
+    "observations.jsonl",
+    "metrics.json"
+  ],
+  "metrics": {
+    "full_automalkg": {
+      "accepted": 3,
+      "rejected": 26
+    },
+    "json_parse_only": {
+      "accepted": 26,
+      "rejected": 3
+    },
+    "production_canonicalization": {
+      "accepted": 3,
+      "rejected": 26
+    },
+    "strict_json_schema": {
+      "accepted": 16,
+      "rejected": 13
+    }
+  },
+  "next_allowed_step": "proposed-method and ablation reporting",
+  "pass_criteria": {
+    "accepted_per_method": ">0",
+    "full_pipeline_silent_acceptance": 0,
+    "rejected_per_method": ">0"
+  },
+  "stage": "baseline",
+  "verdict": "PASS"
+}

@@ -1,0 +1,164 @@
+{
+  "available_provider_routes": 3,
+  "budget": {
+    "budget_usd": 1.0,
+    "conservative_accounted_cost_usd": 0.3267328,
+    "known_cost_usd": 0.3267328,
+    "projected_upper_bound_usd": 0.81249216,
+    "provider_billing_may_differ": true
+  },
+  "claim_boundary": "controlled author-created design-set metrics only; no real-world CTI accuracy or generalization",
+  "command": "src/run_hosted_round3_cc0.py --execute-prepared 5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z --resume",
+  "completion_cap": {
+    "cap_enforced_in_every_request": true,
+    "cap_violation_count": 0,
+    "max_completion_tokens": 4096,
+    "temperature": 0.0
+  },
+  "credential_scan": {
+    "credential_syntax_findings": 0,
+    "files_scanned": 12,
+    "known_secret_values_found": 0,
+    "status": "PASS"
+  },
+  "dependencies": {
+    "openai": "2.29.0"
+  },
+  "execution_provider_policy": "one pinned preferred route; no paid fallback attempts",
+  "experiment_scope": "author-created CC0 controlled design set",
+  "hash_policy": {
+    "algorithm": "sha256",
+    "manifest_self_hash": "excluded_by_definition_to_avoid_self-reference"
+  },
+  "inputs": [
+    {
+      "bytes": 488,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/CC0-1.0-DEDICATION.md",
+      "sha256": "8e118379d07052c8e197a725114c8e66623e0ece71cb23df634efceb0f3da114"
+    },
+    {
+      "bytes": 3719,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/DESIGN_LEDGER.md",
+      "sha256": "5c68762fe04aafd37b4d8f76e4d10fa9127c23cee76fbc9cc2c22c27f521a483"
+    },
+    {
+      "bytes": 16166,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/author_source.json",
+      "sha256": "e3ebeb4ee2e9c2d4566778fb5be36f8adb7947a559c9e3b3e5ed827d13bd267b"
+    },
+    {
+      "bytes": 1739,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/benchmark_manifest.json",
+      "sha256": "978be053ee8f330f449aa3019f759b88a5c59319647310bb48fd2249b507b409"
+    },
+    {
+      "bytes": 16209,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/contexts.jsonl",
+      "sha256": "bc578e94223e4aadf737955c70028294d28b8b6f462c4f18e585a7500176b939"
+    },
+    {
+      "bytes": 2117,
+      "path": "5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/gate_G0_data_provenance.json",
+      "sha256": "a39ee51b3fbbccf9ddcfb62ac8e45c745dd1272acd126c824f72b6546942f1e3"
+    },
+    {
+      "bytes": 436521,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/cases.jsonl",
+      "sha256": "923a5dfc1663c0e34878f4f13d6c7c494630f657dc77e2beee8695aa1b26de15"
+    },
+    {
+      "bytes": 114,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/credential_scan_pre_execution.json",
+      "sha256": "07ad0d584108185800483df7798ff87f7147faf90053c80d2f8625398c2dcec0"
+    },
+    {
+      "bytes": 48968,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/executed_run_hosted_round3_cc0.py",
+      "sha256": "c1f042dc15342ac9f89f5af0abf2079a0d2b1f9489492dd70ef2e349ec994247"
+    },
+    {
+      "bytes": 1705,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/gate_G1_schedule_integrity.json",
+      "sha256": "e87cd2515e12fba95b5ee142c3efcd8760e716266157b8320aa63037fc226783"
+    },
+    {
+      "bytes": 714,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/pricing_snapshot.json",
+      "sha256": "276b27cebeee7d18a522baa37e214cb0f5dfd3f528b35ac912ac4544783c4289"
+    },
+    {
+      "bytes": 7605,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/run_config.json",
+      "sha256": "5cef0508c4a1392d3129b7c98432ac8d7939accc41b30a3f365df29ba24bcf59"
+    }
+  ],
+  "java": {},
+  "os_hardware": {
+    "logical_cpu_count": 8,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "outputs": [
+    {
+      "bytes": 832,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/README.md",
+      "sha256": "025cd66e2a63f4ee02f444e50d9f589135306f01fa946343ef2eed4b6c45d5bb"
+    },
+    {
+      "bytes": 115,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/credential_scan_post_execution.json",
+      "sha256": "ae72a0f143497199b584393a7defbb9e186ae940dd3941500fe06622eb5747f6"
+    },
+    {
+      "bytes": 15868,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/failures.jsonl",
+      "sha256": "6f7fa6f4886eceeb37934cd7a7ddbc855f8fedb9c829fb248b712b94f2b8090d"
+    },
+    {
+      "bytes": 7142,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/metrics.json",
+      "sha256": "36e122e720db88f10654f0826bea7bd7a84dde742795e3cd36fa2a0b98ed9184"
+    },
+    {
+      "bytes": 387503,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/predictions.jsonl",
+      "sha256": "c1323afdc6174f2a720e1e85f567513c06542f5156a50f49c1f747ce6e0e3dae"
+    },
+    {
+      "bytes": 243529,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/raw_responses.jsonl",
+      "sha256": "0ebe0582b56482020cb633a2192ba6025ca303f2895e003bee24364485c51b95"
+    }
+  ],
+  "partial_outputs_preserved": false,
+  "project_git_commit": "c233a33960290fab4b3b2a1ded95b4b7111ae77b",
+  "provider": null,
+  "provider_contract": [
+    {
+      "provider": "openrouter_key_1",
+      "requested_model": "qwen/qwen3.7-plus"
+    }
+  ],
+  "provider_filter": "openrouter",
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.5"
+  },
+  "request_ids_recorded": 144,
+  "requested_model": "qwen/qwen3.7-plus",
+  "resolved_model": null,
+  "resolved_models": [
+    "qwen/qwen3.7-plus"
+  ],
+  "run_id": "hosted_round3_cc0_20260810T004042Z",
+  "schema_version": "1.0",
+  "seed": 20260809,
+  "timestamps": {
+    "finished_at": "2026-08-10T01:53:09+00:00",
+    "started_at": "2026-08-10T00:41:54+00:00"
+  }
+}

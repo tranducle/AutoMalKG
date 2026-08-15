@@ -1,0 +1,7 @@
+{
+  "failures": [],
+  "manifest": "manifest.json",
+  "records_checked": 14,
+  "scope_note": "manifest.json and this verification report are excluded to avoid recursive hashes",
+  "status": "PASS"
+}

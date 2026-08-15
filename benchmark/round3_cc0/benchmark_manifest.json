@@ -1,0 +1,68 @@
+{
+  "audit": {
+    "context_count": 16,
+    "documentation_ipv4_mentions": 4,
+    "entity_types": [
+      "Campaign",
+      "Indicator",
+      "Malware",
+      "ThreatActor",
+      "Vulnerability"
+    ],
+    "gold_entity_count": 38,
+    "gold_relation_count": 24,
+    "negative_controls": 2,
+    "relation_signatures": [
+      [
+        "Malware",
+        "AssociatedWith",
+        "Campaign"
+      ],
+      [
+        "Malware",
+        "HasIndicator",
+        "Indicator"
+      ],
+      [
+        "Malware",
+        "Targets",
+        "Vulnerability"
+      ],
+      [
+        "ThreatActor",
+        "Uses",
+        "Malware"
+      ]
+    ],
+    "reserved_domain_mentions": 4,
+    "unique_context_hashes": 16,
+    "unique_context_ids": 16
+  },
+  "benchmark_id": "automalkg-round3-cc0-controlled-v2",
+  "files": {
+    "CC0-1.0-DEDICATION.md": {
+      "bytes": 488,
+      "sha256": "8e118379d07052c8e197a725114c8e66623e0ece71cb23df634efceb0f3da114"
+    },
+    "DESIGN_LEDGER.md": {
+      "bytes": 3719,
+      "sha256": "5c68762fe04aafd37b4d8f76e4d10fa9127c23cee76fbc9cc2c22c27f521a483"
+    },
+    "author_source.json": {
+      "bytes": 16166,
+      "sha256": "e3ebeb4ee2e9c2d4566778fb5be36f8adb7947a559c9e3b3e5ed827d13bd267b"
+    },
+    "contexts.jsonl": {
+      "bytes": 16209,
+      "sha256": "bc578e94223e4aadf737955c70028294d28b8b6f462c4f18e585a7500176b939"
+    },
+    "gate_G0_data_provenance.json": {
+      "bytes": 1886,
+      "sha256": "2fc0ddb9ab17b9f758c188815db04a3a5ee3223410bc38379a6e2274cc92aac0"
+    }
+  },
+  "generated_at": "2026-08-10T00:27:06+00:00",
+  "generator": "src/generate_round3_cc0_benchmark.py",
+  "generator_sha256": "37c105093307a02c44012019718c9b93be5dfa69ffde04b351c8952b021dc74b",
+  "schema_version": "1.0"
+}

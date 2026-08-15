@@ -1,0 +1,103 @@
+{
+  "execution_scope": "fixtures_only",
+  "hosted_call_attempts": 0,
+  "hosted_input_files_read": false,
+  "included_source_kinds": [
+    "synthetic_fixture"
+  ],
+  "limitations": [
+    "The JSON Schema comparator is an offline nearest alternative, not provider-native constrained decoding.",
+    "No hosted responses are included; fixture-only outcomes do not estimate factual extraction accuracy.",
+    "Direct OWL contradiction fixtures test the reasoner layer after deliberate bypass of the production extraction contract.",
+    "The strict schema rejects unknown fields and checks structural shape, but JSON Schema does not enforce referential integrity or predicate type signatures.",
+    "No latency superiority inference is licensed by this sequential local run."
+  ],
+  "observation_count": 29,
+  "provider_native_structured_output_used": false,
+  "reachability": {
+    "disjoint_class_pairs_tested": 10,
+    "failed": 0,
+    "non_discriminating_axioms": [
+      "Targets.domain"
+    ],
+    "owl_inconsistency_classes": 17,
+    "owl_inconsistency_classes_reachable_by_reasoner_integration_injection": 17,
+    "owl_inconsistency_classes_reachable_from_production_input": 0,
+    "passed": 26,
+    "property_domain_range_inconsistencies_tested": 7,
+    "row_count": 26
+  },
+  "run_id": "offline_stage_reachability_fixture_only_20260809_v6",
+  "study_type": "offline_fixture_only_stage_reachability",
+  "summaries": {
+    "synthetic_fixture": {
+      "case_count": 29,
+      "methods": {
+        "full_automalkg": {
+          "acceptance_rate": 0.10344827586206896,
+          "accepted": 3,
+          "derivations_with_complete_proof": 1,
+          "emitted_facts_for_provenance": 8,
+          "expected_derivations": 1,
+          "known_violation_cases": 26,
+          "proof_ledger_capability_coverage": 1.0,
+          "provenance_completeness": 1.0,
+          "rejected": 26,
+          "resolvable_provenance_facts": 8,
+          "silent_acceptance_of_known_violations": 0,
+          "silent_acceptance_rate": 0.0
+        },
+        "json_parse_only": {
+          "acceptance_rate": 0.896551724137931,
+          "accepted": 26,
+          "derivations_with_complete_proof": 0,
+          "emitted_facts_for_provenance": 55,
+          "expected_derivations": 1,
+          "known_violation_cases": 26,
+          "proof_ledger_capability_coverage": 0.0,
+          "provenance_completeness": 0.0,
+          "rejected": 3,
+          "resolvable_provenance_facts": 0,
+          "silent_acceptance_of_known_violations": 23,
+          "silent_acceptance_rate": 0.8846153846153846
+        },
+        "production_canonicalization": {
+          "acceptance_rate": 0.10344827586206896,
+          "accepted": 3,
+          "derivations_with_complete_proof": 0,
+          "emitted_facts_for_provenance": 9,
+          "expected_derivations": 1,
+          "known_violation_cases": 26,
+          "proof_ledger_capability_coverage": 0.0,
+          "provenance_completeness": 1.0,
+          "rejected": 26,
+          "resolvable_provenance_facts": 9,
+          "silent_acceptance_of_known_violations": 0,
+          "silent_acceptance_rate": 0.0
+        },
+        "strict_json_schema": {
+          "acceptance_rate": 0.5517241379310345,
+          "accepted": 16,
+          "derivations_with_complete_proof": 0,
+          "emitted_facts_for_provenance": 55,
+          "expected_derivations": 1,
+          "known_violation_cases": 26,
+          "proof_ledger_capability_coverage": 0.0,
+          "provenance_completeness": 0.0,
+          "rejected": 13,
+          "resolvable_provenance_facts": 0,
+          "silent_acceptance_of_known_violations": 13,
+          "silent_acceptance_rate": 0.5
+        }
+      },
+      "observed_failure_stage_distribution": {
+        "None": 3,
+        "client_error": 1,
+        "json_parse": 2,
+        "json_schema": 10,
+        "nonempty_gate": 1,
+        "production_contract": 12
+      }
+    }
+  }
+}

@@ -1,0 +1,555 @@
+{
+  "analysis_unit": "16 context clusters; repeats and conditions nested within each cluster; 144 requests are NOT independent samples",
+  "clean_condition": "typed_evidence",
+  "injected_condition": "typed_evidence_injection",
+  "overall": {
+    "canonical_graph_displacement_combined": {
+      "added_count_total": 5,
+      "mean_jaccard_combined": 0.90277778,
+      "removed_count_total": 9,
+      "unchanged_count_total": 179
+    },
+    "gold_score_displacement": {
+      "combined": {
+        "f1": 1.93333333,
+        "fn": -6.0,
+        "fp": -2.0,
+        "tp": 6.0
+      },
+      "entities": {
+        "f1": 1.66666667,
+        "fn": -2.0,
+        "fp": -3.0,
+        "tp": 2.0
+      },
+      "relations": {
+        "f1": 2.0,
+        "fn": -4.0,
+        "fp": 1.0,
+        "tp": 4.0
+      }
+    },
+    "pair_count": 48,
+    "status_displacement": {
+      "schema_invalid->valid": 1,
+      "valid->valid": 47
+    }
+  },
+  "pair_count": 48,
+  "per_cluster": {
+    "r3c01": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c02": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 15
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c03": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c04": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 0.88888889,
+        "removed_count_total": 1,
+        "unchanged_count_total": 7
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": -0.06666667,
+          "fn": 0.0,
+          "fp": 1.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 1.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "schema_invalid->valid": 1,
+        "valid->valid": 2
+      }
+    },
+    "r3c05": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 15
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c06": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c07": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 15
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c08": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 15
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c09": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 15
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c10": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 2,
+        "mean_jaccard_combined": 0.55555556,
+        "removed_count_total": 6,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 1.0,
+          "fn": -6.0,
+          "fp": -2.0,
+          "tp": 6.0
+        },
+        "entities": {
+          "f1": 0.66666667,
+          "fn": -2.0,
+          "fp": -2.0,
+          "tp": 2.0
+        },
+        "relations": {
+          "f1": 2.0,
+          "fn": -4.0,
+          "fp": 0.0,
+          "tp": 4.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c11": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c12": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 9
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c13": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 21
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c14": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 0,
+        "mean_jaccard_combined": 1.0,
+        "removed_count_total": 0,
+        "unchanged_count_total": 21
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c15": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 2,
+        "mean_jaccard_combined": 0.33333333,
+        "removed_count_total": 2,
+        "unchanged_count_total": 1
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    },
+    "r3c16": {
+      "canonical_graph_displacement_combined": {
+        "added_count_total": 1,
+        "mean_jaccard_combined": 0.66666667,
+        "removed_count_total": 0,
+        "unchanged_count_total": 0
+      },
+      "gold_score_displacement": {
+        "combined": {
+          "f1": 1.0,
+          "fn": 0.0,
+          "fp": -1.0,
+          "tp": 0.0
+        },
+        "entities": {
+          "f1": 1.0,
+          "fn": 0.0,
+          "fp": -1.0,
+          "tp": 0.0
+        },
+        "relations": {
+          "f1": 0.0,
+          "fn": 0.0,
+          "fp": 0.0,
+          "tp": 0.0
+        }
+      },
+      "pair_count": 3,
+      "status_displacement": {
+        "valid->valid": 3
+      }
+    }
+  },
+  "skipped_pairs": []
+}

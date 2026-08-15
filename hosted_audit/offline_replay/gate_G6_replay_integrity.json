@@ -1,0 +1,30 @@
+{
+  "command_or_check": "deterministic build_integrity_gate over case-level ledger",
+  "fail_interpretation": "The replay is incomplete, untraceable, or violates the fail-closed serialization/proof contract.",
+  "failed_criteria": [],
+  "gate_id": "G6_hosted_end_to_end_replay_integrity",
+  "hypothesis_or_mechanism": "Every stored response is replayed exactly once without repair; only Pellet-consistent graphs serialize, and every inferred edge has support.",
+  "input_artifacts": [
+    "stage_ledger.jsonl",
+    "metrics.json"
+  ],
+  "metrics": {
+    "case_count": 126,
+    "hosted_call_attempts": 0,
+    "inferred_relation_count": 0,
+    "inferred_relations_with_proofs": 0,
+    "pellet_consistent": 30,
+    "raw_hash_verified": 126,
+    "serialized_verified_artifacts": 30
+  },
+  "next_allowed_step": "bounded integration reporting",
+  "pass_criteria": {
+    "exact_case_count": 126,
+    "hosted_call_attempts": 0,
+    "proof_coverage": "100% of inferred relations",
+    "raw_hash_verified": "126/126",
+    "serialization": "iff Pellet status is consistent"
+  },
+  "stage": "results_to_manuscript_claims",
+  "verdict": "PASS"
+}

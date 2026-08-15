@@ -1,0 +1,35 @@
+{
+  "command_or_check": "python src/reanalyze_hosted_clusters.py",
+  "fail_interpretation": "The stored run would not support context-clustered validity or paired output-displacement summaries.",
+  "failed_criteria": [],
+  "gate_id": "G6_hosted_clustered_reanalysis_integrity",
+  "hypothesis_or_mechanism": "Frozen outcomes can be recomputed at the context-cluster level and clean/injected responses can be paired without issuing new hosted calls.",
+  "input_artifacts": [
+    "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/cases.jsonl",
+    "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/predictions.jsonl",
+    "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z/raw_responses.jsonl"
+  ],
+  "metrics": {
+    "cases": 126,
+    "contexts": 14,
+    "paired_responses": 42,
+    "source_hashes_checked": 3
+  },
+  "next_allowed_step": "bounded descriptive reporting with all warnings",
+  "pass_criteria": {
+    "case_integrity": "126 unique cases with one prediction and raw response each",
+    "cluster_integrity": "14 contexts x 3 conditions x 3 repeats",
+    "metric_semantics": "context is bootstrap unit; fixed order and bundled prompts disclosed",
+    "network_calls": "none",
+    "pair_integrity": "42 aligned typed-evidence/injection pairs",
+    "source_integrity": "required frozen source artifacts match their original manifest hashes"
+  },
+  "stage": "offline_clustered_reanalysis",
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "fixed non-counterbalanced condition order",
+    "minimal-to-typed contrast bundles multiple prompt components",
+    "14 deterministic sampled contexts do not define a population sampling frame",
+    "CTI-HAL is not full MALOnt factual gold"
+  ]
+}

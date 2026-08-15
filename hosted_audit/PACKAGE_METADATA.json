@@ -1,0 +1,224 @@
+{
+  "archive_metadata": {
+    "file_mode": "0o644",
+    "gid": 0,
+    "gname": "",
+    "mtime": 0,
+    "uid": 0,
+    "uname": ""
+  },
+  "archive_schema": "automalkg-anonymous-supplement-v2",
+  "hash_algorithm": "sha256",
+  "members": [
+    {
+      "archive_path": "README.md",
+      "bytes": 1532,
+      "packaged_sha256": "0a3f7e4c33b908356f52703e846364aa2bded8de8da73d8e4f10620680a618a0",
+      "source": "generated",
+      "source_sha256": null,
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/README.md",
+      "bytes": 2830,
+      "packaged_sha256": "f375ce25929dd11e5f1ba5b6467d39fa779072d05e0a5eaa0c3fc6861387ea3b",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/README.md",
+      "source_sha256": "f375ce25929dd11e5f1ba5b6467d39fa779072d05e0a5eaa0c3fc6861387ea3b",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/gate_G6_clustered_reanalysis.json",
+      "bytes": 1775,
+      "packaged_sha256": "dd549e1b69ec9e358e1f74062ed590d91531e84b3fb85d8685a32bfe2fd66d0e",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/gate_G6_clustered_reanalysis.json",
+      "source_sha256": "dd549e1b69ec9e358e1f74062ed590d91531e84b3fb85d8685a32bfe2fd66d0e",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/gate_G8_claim_permission.json",
+      "bytes": 1122,
+      "packaged_sha256": "cb5044700188002726e4803a80aedaed182846243ba31ac9b488fcbe8b8a9695",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/gate_G8_claim_permission.json",
+      "source_sha256": "cb5044700188002726e4803a80aedaed182846243ba31ac9b488fcbe8b8a9695",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/manifest.json",
+      "bytes": 4445,
+      "packaged_sha256": "f937ff756e34a49bcfe8f782374715b695eb500a34f476bcb50763c4332681b3",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/manifest.json",
+      "source_sha256": "f937ff756e34a49bcfe8f782374715b695eb500a34f476bcb50763c4332681b3",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/manifest_verification.json",
+      "bytes": 198,
+      "packaged_sha256": "09b6d8e808394d8ed1d9ff957184a633ac6f2a976f538e7f1c320eec9405e3ed",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/manifest_verification.json",
+      "source_sha256": "09b6d8e808394d8ed1d9ff957184a633ac6f2a976f538e7f1c320eec9405e3ed",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/metrics.json",
+      "bytes": 7425,
+      "packaged_sha256": "71dfec3ba36f970f80b54b71ebb40546d3e7a32d9c30fde89b7efdbe591c3072",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/metrics.json",
+      "source_sha256": "71dfec3ba36f970f80b54b71ebb40546d3e7a32d9c30fde89b7efdbe591c3072",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "cluster_analysis/source_integrity.json",
+      "bytes": 674,
+      "packaged_sha256": "c8c98935215485be536eb441e02e2daeedcd11e8133447bc34dc083eaca36086",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/source_integrity.json",
+      "source_sha256": "c8c98935215485be536eb441e02e2daeedcd11e8133447bc34dc083eaca36086",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/credential_scan_post_execution.json",
+      "bytes": 115,
+      "packaged_sha256": "ae72a0f143497199b584393a7defbb9e186ae940dd3941500fe06622eb5747f6",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/credential_scan_post_execution.json",
+      "source_sha256": "ae72a0f143497199b584393a7defbb9e186ae940dd3941500fe06622eb5747f6",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/credential_scan_pre_execution.json",
+      "bytes": 114,
+      "packaged_sha256": "07ad0d584108185800483df7798ff87f7147faf90053c80d2f8625398c2dcec0",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/credential_scan_pre_execution.json",
+      "source_sha256": "07ad0d584108185800483df7798ff87f7147faf90053c80d2f8625398c2dcec0",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/executed_run_hosted_round3_cc0.py",
+      "bytes": 48968,
+      "packaged_sha256": "c1f042dc15342ac9f89f5af0abf2079a0d2b1f9489492dd70ef2e349ec994247",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/executed_run_hosted_round3_cc0.py",
+      "source_sha256": "c1f042dc15342ac9f89f5af0abf2079a0d2b1f9489492dd70ef2e349ec994247",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/gate_G1_schedule_integrity.json",
+      "bytes": 1705,
+      "packaged_sha256": "e87cd2515e12fba95b5ee142c3efcd8760e716266157b8320aa63037fc226783",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/gate_G1_schedule_integrity.json",
+      "source_sha256": "e87cd2515e12fba95b5ee142c3efcd8760e716266157b8320aa63037fc226783",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/manifest.json",
+      "bytes": 6337,
+      "packaged_sha256": "bf4b196bdca1c1fa1e520a1b32dd272849f2555c1864619d3f424e9268cfa555",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/manifest.json",
+      "source_sha256": "bf4b196bdca1c1fa1e520a1b32dd272849f2555c1864619d3f424e9268cfa555",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/metrics.json",
+      "bytes": 7142,
+      "packaged_sha256": "36e122e720db88f10654f0826bea7bd7a84dde742795e3cd36fa2a0b98ed9184",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/metrics.json",
+      "source_sha256": "36e122e720db88f10654f0826bea7bd7a84dde742795e3cd36fa2a0b98ed9184",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/paired_displacement.json",
+      "bytes": 12273,
+      "packaged_sha256": "f1b685ba0bd20b664c4f738652a3bcfd85bad9b3ce2fe1a0f6daa4af57dc6f10",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/paired_displacement.json",
+      "source_sha256": "f1b685ba0bd20b664c4f738652a3bcfd85bad9b3ce2fe1a0f6daa4af57dc6f10",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/pre_call_manifest.json",
+      "bytes": 4799,
+      "packaged_sha256": "6e6f62c52e6f5e54f20348a9f1f89c0526170780565d07bee08671d13842551e",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/pre_call_manifest.json",
+      "source_sha256": "6e6f62c52e6f5e54f20348a9f1f89c0526170780565d07bee08671d13842551e",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/pricing_snapshot.json",
+      "bytes": 714,
+      "packaged_sha256": "276b27cebeee7d18a522baa37e214cb0f5dfd3f528b35ac912ac4544783c4289",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/pricing_snapshot.json",
+      "source_sha256": "276b27cebeee7d18a522baa37e214cb0f5dfd3f528b35ac912ac4544783c4289",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "hosted_run/run_config.json",
+      "bytes": 7605,
+      "packaged_sha256": "5cef0508c4a1392d3129b7c98432ac8d7939accc41b30a3f365df29ba24bcf59",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_round3_cc0_20260810T004042Z/run_config.json",
+      "source_sha256": "5cef0508c4a1392d3129b7c98432ac8d7939accc41b30a3f365df29ba24bcf59",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "offline_replay/README.md",
+      "bytes": 1593,
+      "packaged_sha256": "1f3329a1ccd9adcf3f40bd6e3f8c8b29a8c1496f98da44d451de7afb4c8eb249",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/README.md",
+      "source_sha256": "1f3329a1ccd9adcf3f40bd6e3f8c8b29a8c1496f98da44d451de7afb4c8eb249",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "offline_replay/gate_G6_replay_integrity.json",
+      "bytes": 1133,
+      "packaged_sha256": "03012c7d91b00460144a5f634c2567f788528ac0bd475cb9289554e07604d7e2",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/gate_G6_replay_integrity.json",
+      "source_sha256": "03012c7d91b00460144a5f634c2567f788528ac0bd475cb9289554e07604d7e2",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "offline_replay/gate_G6_standard_result_integrity.json",
+      "bytes": 1187,
+      "packaged_sha256": "381d45f2eb709693963f8e009acb3226e047ed2046b0771266639b6bb8e31431",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/gate_G6_standard_result_integrity.json",
+      "source_sha256": "735bf81be63506dc19fdbf3aaea32479ebc9bfff269f14e9869df117ffc719e9",
+      "transformed_for_anonymity": true
+    },
+    {
+      "archive_path": "offline_replay/manifest.json",
+      "bytes": 58603,
+      "packaged_sha256": "d1d92acc6c2f6ce23b71be30669972ed070d0016b1e1ee9bbeb4c6c85b451367",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/manifest.json",
+      "source_sha256": "d1d92acc6c2f6ce23b71be30669972ed070d0016b1e1ee9bbeb4c6c85b451367",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "offline_replay/metrics.json",
+      "bytes": 2235,
+      "packaged_sha256": "ecd0983acafd96ce125786899c9a43b5a1a6fc1c4b5f435f640435fd480b6f26",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_end_to_end_replay_20260809_round3_v2/metrics.json",
+      "source_sha256": "ecd0983acafd96ce125786899c9a43b5a1a6fc1c4b5f435f640435fd480b6f26",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "offline_replay/stage_ledger_public.jsonl",
+      "bytes": 128666,
+      "packaged_sha256": "364465f6c99034a5f78fc8f47221d43b51e98402d347b28d6496b66cc91674dd",
+      "source": "generated",
+      "source_sha256": null,
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "prompts.json",
+      "bytes": 4948,
+      "packaged_sha256": "026336fdee8fec44e21ab99375aa55075e383f6b7918654a8bb983acd9676198",
+      "source": "generated",
+      "source_sha256": null,
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "verify_archive.py",
+      "bytes": 1451,
+      "packaged_sha256": "3014e514b206f10b8174206f4af1f823828fa6d05819c906c69bf99b2d54f5e8",
+      "source": "generated",
+      "source_sha256": null,
+      "transformed_for_anonymity": false
+    }
+  ],
+  "package_id": "S2-hosted-audit-public-v2",
+  "scope_note": "source_sha256 identifies the local evidence file before path sanitization; packaged_sha256 verifies the public-safe copy"
+}

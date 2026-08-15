@@ -1,0 +1,27 @@
+{
+  "command_or_check": "deterministic claim-boundary rules embedded in reanalysis script",
+  "fail_interpretation": "Claims would exceed the construct validity of the frozen experiment.",
+  "failed_criteria": [],
+  "gate_id": "G8_hosted_clustered_claim_permission",
+  "input_artifacts": [
+    "metrics.json",
+    "context_outcomes.jsonl",
+    "injection_pairs.jsonl"
+  ],
+  "metrics": {
+    "upstream_gate": "PASS_WITH_WARNINGS"
+  },
+  "next_allowed_step": "bounded manuscript wording",
+  "pass_criteria": {
+    "allowed": "descriptive contract-validity fractions, context-cluster sensitivity intervals, and paired clean/injected response-set displacement",
+    "prohibited": "factual accuracy/corruption, robustness generalization, prompt-component causality, or latency effects"
+  },
+  "stage": "results_to_claims",
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "fixed non-counterbalanced condition order",
+    "minimal-to-typed contrast bundles multiple prompt components",
+    "14 deterministic sampled contexts do not define a population sampling frame",
+    "CTI-HAL is not full MALOnt factual gold"
+  ]
+}

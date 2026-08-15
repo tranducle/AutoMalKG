@@ -1,0 +1,390 @@
+{
+  "command": "src/run_stage_reachability_ablation.py --fixtures-only --output-dir 5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6",
+  "dependencies": {
+    "jsonschema": "4.26.0",
+    "owlready2": "0.50"
+  },
+  "execution_scope": "fixtures_only",
+  "hash_policy": {
+    "algorithm": "sha256",
+    "manifest_self_hash": "excluded_by_definition_to_avoid_self-reference"
+  },
+  "hosted_call_attempts": 0,
+  "hosted_input_files_read": false,
+  "immutability": "runner refuses overwrite; SHA-256 covers every material input/output except manifest self-hash",
+  "inputs": [
+    {
+      "bytes": 5209,
+      "path": "src/contracts.py",
+      "sha256": "6d7d7cc9e40d2e555588ee4b671193ccd3eed0546f58859accde93a556b7a263"
+    },
+    {
+      "bytes": 21590,
+      "path": "src/extraction.py",
+      "sha256": "27e21ed10096f3ad1b8a0e462fe2bebd65d0d1361989a03022b462a50a799b76"
+    },
+    {
+      "bytes": 13449,
+      "path": "src/reasoning.py",
+      "sha256": "caebff9684f5a0f2a7f9aca7346dabee67aec6a4f83aecda22b5460d373bdbf4"
+    },
+    {
+      "bytes": 57164,
+      "path": "src/run_stage_reachability_ablation.py",
+      "sha256": "67ca0525b620334ac29ef74c8f950ddcab20494c520f955e3b5c48582fd98417"
+    }
+  ],
+  "java": {
+    "attempts": [
+      {
+        "command": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java -version",
+        "output": "openjdk version \"26.0.1\" 2026-04-21\nOpenJDK Runtime Environment Homebrew (build 26.0.1)\nOpenJDK 64-Bit Server VM Homebrew (build 26.0.1, mixed mode, sharing)",
+        "path": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "returncode": 0,
+        "status": "ok"
+      }
+    ],
+    "selected": "/opt/homebrew/Cellar/openjdk/26.0.1/libexec/openjdk.jdk/Contents/Home/bin/java"
+  },
+  "os_hardware": {
+    "logical_cpu_count": 8,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "outputs": [
+    {
+      "bytes": 941,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/G1_input_parity.json",
+      "sha256": "5aff9e2e60db1782d3d40a50b03d4bf95cf15e63e350ae353ad68e8d08525f9e"
+    },
+    {
+      "bytes": 1115,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/G2_baseline_sanity.json",
+      "sha256": "89e00a2e8784a0055fd6e7a0b6500f8979ff15c12e340ae05a1565d456c0c699"
+    },
+    {
+      "bytes": 987,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/G4_ablation_validity.json",
+      "sha256": "e79e54093b8db6214c71c9d072a9e59ccd28e25eeebdc5c24deda24c310b3181"
+    },
+    {
+      "bytes": 969,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/G6_result_integrity.json",
+      "sha256": "91b072f1865d50f83903626eabaad777b1cae709ec0b273f749ddcd78b6cdac0"
+    },
+    {
+      "bytes": 1679,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/README.md",
+      "sha256": "39635a10d84e69f172f44532a8d5c0a947e26102f59fbcc3874cac66ef2fdb84"
+    },
+    {
+      "bytes": 1453,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/baseline_fairness_audit.json",
+      "sha256": "a32ba3f2d52226b08edd014cc4d77e82956975b120ca3eea5ba99147b0f889d8"
+    },
+    {
+      "bytes": 57164,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/executed_run_stage_reachability_ablation.py",
+      "sha256": "67ca0525b620334ac29ef74c8f950ddcab20494c520f955e3b5c48582fd98417"
+    },
+    {
+      "bytes": 11246,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/fixtures.jsonl",
+      "sha256": "648533acf713ae16d28c2772c4a039d51db85c8a0ccc567b9bb13f9ca81e9e67"
+    },
+    {
+      "bytes": 3923,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/metrics.json",
+      "sha256": "0a88b4f3081ac3fdbc4b37f0794b4d9d78baad8637425574204d11575b08bcb6"
+    },
+    {
+      "bytes": 46596,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/observations.jsonl",
+      "sha256": "462e769cffdd6eef6161247f436e083c0905eb452539f659b30e8160bb9dedeb"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-associatedwith-wrong-object.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-associatedwith-wrong-subject.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-blank-name.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-client-error.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-dangling-object.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-dangling-subject.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-duplicate-entity-id.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-duplicate-relation.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-empty-graph.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-hasindicator-wrong-object.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-hasindicator-wrong-subject.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-invalid-aliases.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-invalid-entity-type.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-invalid-predicate.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-invalid-provenance.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-malformed-json.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-missing-arrays.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-partial-two-chunk.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-root-array.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-targets-wrong-object.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-targets-wrong-subject.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-unknown-entity-key.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-unknown-relation-key.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-unknown-root-key.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-uses-wrong-object.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-uses-wrong-subject.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-valid-isolated.log",
+      "sha256": "10d70533c5068905fd18bacdb892443fd74663a06c1e8aed448e106d16d7343c"
+    },
+    {
+      "bytes": 2369,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-valid-swrl-chain.log",
+      "sha256": "d1974f248c804735b68e2c097834e6e75bb838dd91b725750a016e9152416c0a"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/fixture-valid-type-aware-homonym.log",
+      "sha256": "43429000fa09d55a36279be071c65ed9825d39326c205bb97f44b235ce64f00e"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-associatedwith-domain.log",
+      "sha256": "b28fb4b899b4cf6af5729595f5f9aef08434317f17cebae8fde74fb7b2d32187"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-associatedwith-range.log",
+      "sha256": "fd3ae892c19a8b0ac488712fa5fd1e4cae1aad9df891ac7931373a1e60a9d049"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-campaign-indicator.log",
+      "sha256": "aebd98d0abfc8f86025b40bc3b0f4b003734bd7ec6c65be8ec3ab78fc43598f9"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-malware-campaign.log",
+      "sha256": "f096a0de434ddda960391bf2e01f445939e66b6470ffae1070e431957243afd8"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-malware-indicator.log",
+      "sha256": "83817f943e60d5949ddac42e73eb452df6bdb2b4b4d1cb5b0e8a00d248e667cd"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-malware-vulnerability.log",
+      "sha256": "86ab2e4dfe3773eac5d22744c5df5aa003380e6c4e375819ea5b6bf2b3a0a9c9"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-threatactor-campaign.log",
+      "sha256": "a9ae0bd68ab1cadd7e24b4c345434b458833c6adbb260927be9e7dbdca6a1d2e"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-threatactor-indicator.log",
+      "sha256": "93105e60c1c6359e86afad546e89769f2c67a39b38fec5c1b67f561c8bc708bc"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-threatactor-malware.log",
+      "sha256": "fe891f786e364314c18efed81007e562a2d594342a20101a67a86144c6e9c8c1"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-threatactor-vulnerability.log",
+      "sha256": "adfeff7949997fbacd4699133696974fd518147cc9a8384f4d9641427216580b"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-vulnerability-campaign.log",
+      "sha256": "f52e056bae68aba49f85972f84da72439f733d6985b193f4025f213c0efb20aa"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-disjoint-vulnerability-indicator.log",
+      "sha256": "3dfbbbc2448205ccbe07b07c1d15de89f24835d7ac38228dd6e07c7a455cb74b"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-hasindicator-domain.log",
+      "sha256": "e58e8f0a071f465b0983061f13e015bf2808dfe2c5eecaa73ee1fd52dd3d798d"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-hasindicator-range.log",
+      "sha256": "01c7160472c0d8fecbd39104a6d7e60189f5fb3fc7921fca6ee0fac5ab72c237"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-targets-domain.log",
+      "sha256": "9bcbf5584bd49b43017ee546609753d7a3223ad817a312ab5716883624c72973"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-targets-range.log",
+      "sha256": "e2a2c1a06fdcb3db59ad32f910bc6bc7e8d67addbb74277d8d0e621062736e65"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-uses-domain.log",
+      "sha256": "42ba08b8ac8f65f9aeccf2dcedaae5281008c0df670ceb1ec8027cfd291440d6"
+    },
+    {
+      "bytes": 2029,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/owl-uses-range.log",
+      "sha256": "4d13270bc57dc5639ce90904ba180d23f4597359429c4972455c4cf6f002a0ca"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/swrl-disconnected.log",
+      "sha256": "a6e63022c7a0df33523fe308b6e20314462fc744a86b6637d325f50d8477a14c"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/swrl-missing-targets.log",
+      "sha256": "95d449af28d4e795dee2092bd915b43a8e284cd9768264a64247d96d1e01350b"
+    },
+    {
+      "bytes": 2192,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/swrl-missing-uses.log",
+      "sha256": "d2c761698907e8cd7baedffa3c18c7fe019746c0fc47d72c77b0ac8da75b81bf"
+    },
+    {
+      "bytes": 2300,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pellet_logs/swrl-positive.log",
+      "sha256": "e78a23870c67ed044826ea0caf2a41c3dfd7bf70f307f01db3da1748d8d49607"
+    },
+    {
+      "bytes": 5593,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/pip_freeze.txt",
+      "sha256": "fdce2bab893038defb008ca6b482d44b9ea41676481d4a35c0152a893e3608eb"
+    },
+    {
+      "bytes": 15412,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/offline_stage_reachability_fixture_only_20260809_v6/stage_reachability_matrix.jsonl",
+      "sha256": "6d351af2dfcf49cfdee1bee2f9b8b43581022dc136132e928cf2f44a46ee2409"
+    }
+  ],
+  "project_git_commit": "c233a33960290fab4b3b2a1ded95b4b7111ae77b",
+  "provider": null,
+  "provider_native_structured_output_used": false,
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.5"
+  },
+  "resolved_model": null,
+  "run_id": "offline_stage_reachability_fixture_only_20260809_v6",
+  "schema_version": "1.0",
+  "seed": 20260809,
+  "timestamps": {
+    "finished_at": "2026-08-09T23:34:16+00:00",
+    "started_at": "2026-08-09T23:33:41+00:00"
+  }
+}

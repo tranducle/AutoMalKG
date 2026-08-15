@@ -1,0 +1,45 @@
+{
+  "command_or_check": "validate_schedule over the frozen case ledger",
+  "fail_interpretation": "Condition comparisons would remain missing, duplicated, or order-confounded.",
+  "failed_criteria": [],
+  "gate_id": "G1_round3_case_schedule_integrity",
+  "hypothesis_or_mechanism": "The frozen schedule represents every context-condition-repeat exactly once and removes fixed condition-position order.",
+  "input_artifacts": [
+    "cases.jsonl",
+    "benchmark_manifest.json"
+  ],
+  "metrics": {
+    "case_count": 144,
+    "condition_counts": {
+      "minimal_json": 48,
+      "typed_evidence": 48,
+      "typed_evidence_injection": 48
+    },
+    "condition_position_counts": {
+      "minimal_json|position_1": 16,
+      "minimal_json|position_2": 16,
+      "minimal_json|position_3": 16,
+      "typed_evidence_injection|position_1": 16,
+      "typed_evidence_injection|position_2": 16,
+      "typed_evidence_injection|position_3": 16,
+      "typed_evidence|position_1": 16,
+      "typed_evidence|position_2": 16,
+      "typed_evidence|position_3": 16
+    },
+    "context_count": 16,
+    "counterbalance_contract": "each condition occupies positions 1, 2, and 3 once per context across the three repeats",
+    "longest_identical_condition_run": 2,
+    "ordering": "sequential execution in frozen ledger order; conditions interleaved by context and Latin rotation",
+    "unique_case_ids": 144
+  },
+  "next_allowed_step": "no-network prepared-run audit, then bounded hosted execution",
+  "pass_criteria": {
+    "cases": 144,
+    "conditions": 3,
+    "contexts": 16,
+    "position_balance": "16 cases per condition-position",
+    "repeats": 3
+  },
+  "stage": "benchmark_preprocessing",
+  "verdict": "PASS"
+}

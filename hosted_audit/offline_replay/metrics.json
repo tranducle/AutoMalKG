@@ -1,0 +1,73 @@
+{
+  "by_condition": {
+    "minimal_json": {
+      "case_count": 42,
+      "extraction_status_distribution": {
+        "schema_invalid": 42
+      },
+      "serialized_verified_artifacts": 0
+    },
+    "typed_evidence": {
+      "case_count": 42,
+      "extraction_status_distribution": {
+        "empty": 20,
+        "schema_invalid": 2,
+        "success": 20
+      },
+      "serialized_verified_artifacts": 20
+    },
+    "typed_evidence_injection": {
+      "case_count": 42,
+      "extraction_status_distribution": {
+        "empty": 30,
+        "schema_invalid": 2,
+        "success": 10
+      },
+      "serialized_verified_artifacts": 10
+    }
+  },
+  "case_count": 126,
+  "cases_with_inferred_relations": 0,
+  "experiment_scope": "offline_frozen_response_pipeline_integration_not_factual_accuracy",
+  "extraction_status_distribution": {
+    "empty": 50,
+    "schema_invalid": 46,
+    "success": 30
+  },
+  "fixed_response_order": "lexicographic_case_id",
+  "hosted_call_attempts": 0,
+  "inferred_relation_count": 0,
+  "inferred_relations_with_proofs": 0,
+  "raw_outputs_repaired": false,
+  "reasoning_status_distribution": {
+    "consistent": 30,
+    "not_run": 96
+  },
+  "replay_client_calls": 126,
+  "schema_version": "1.0",
+  "source_run": "5_Data_and_Experiments/acceptance_loop/runs/hosted_stress_20260809T211342Z",
+  "source_run_manifest_sha256": "dad9e98eb235e42e065d6d0aa5bf32ab83f76f2ef098061c24f432725b38b6e4",
+  "stage_counts": {
+    "canonicalization_completed": 80,
+    "inference_ledgers_emitted": 30,
+    "json_parse_passed": 126,
+    "nonempty_canonical_graph": 30,
+    "ontology_load_validated": 30,
+    "pellet_consistent": 30,
+    "raw_hash_verified": 126,
+    "schema_passed": 80,
+    "serialized_verified_artifacts": 30
+  },
+  "stage_rates": {
+    "canonicalization_completed": 0.6349206349206349,
+    "inference_ledgers_emitted": 0.23809523809523808,
+    "json_parse_passed": 1.0,
+    "nonempty_canonical_graph": 0.23809523809523808,
+    "ontology_load_validated": 0.23809523809523808,
+    "pellet_consistent": 0.23809523809523808,
+    "raw_hash_verified": 1.0,
+    "schema_passed": 0.6349206349206349,
+    "serialized_verified_artifacts": 0.23809523809523808
+  },
+  "total_runtime_seconds": 16.128884836900397
+}
