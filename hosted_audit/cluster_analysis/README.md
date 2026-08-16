@@ -1,3 +1,15 @@
+> **Superseded -- retained as a record.**
+>
+> This reanalysis belongs to the earlier hosted stress run
+> `hosted_stress_20260809T211342Z`: 126 calls over 14 sampled CTI-HAL contexts
+> in 7 groups.  It is superseded by `hosted_round3_cc0_20260810T004042Z`, the
+> run projected in `../hosted_run/`: 144 calls over 16 author-authored CC0-1.0
+> contexts.  Round 3 replaced the CTI-HAL sample with a corpus whose licensing
+> permits publication, and it is the run every hosted result in the manuscript
+> reports.  No number below is reported in the manuscript.  The reanalysis is
+> retained so that the earlier analysis, and the change of corpus, stay
+> auditable.
+
 # Hosted Clustered Reanalysis
 
 This is an offline reanalysis of the frozen 126-call hosted run. It issued **no

@@ -41,7 +41,7 @@ every structural check.
 | `benchmark/round3_cc0/` | The 16 CC0-1.0 evaluation contexts with gold annotations, manifest, design ledger, and provenance statement. All names are fictitious; IPs use IANA documentation ranges. |
 | `evidence/semantic/` | Seeded OWL-consistency and SWRL-completion controls (25+25 cases each) with observations, metrics, and raw Pellet logs. |
 | `evidence/reachability/` | The 29-fixture offline stage ablation (26 violations + 3 controls), the 17-class OWL contradiction reachability matrix, and per-fixture Pellet logs. |
-| `hosted_audit/` | The public-safe audit projection of the frozen hosted run: exact prompts, executed runner snapshot, pre/post credential scans, pricing snapshot, per-call stage ledger (pseudonymized), paired-displacement analysis, and offline replay metrics. Self-verifying with its own manifest. |
+| `hosted_audit/` | The public-safe audit projection of the frozen hosted run: exact prompts, executed runner snapshot, pre/post credential scans, pricing snapshot, per-call stage ledger (pseudonymized), paired-displacement analysis, and offline replay metrics. Self-verifying with its own manifest. Its `cluster_analysis/` subdirectory holds a **superseded** offline reanalysis of an earlier 126-call stress run over CTI-HAL contexts; it is labelled as such, retained for auditability, and is the source of no reported result. See `hosted_audit/README.md` for the full contents index. |
 | `requirements.txt` | Pinned direct dependencies for the artifact. |
 | `MANIFEST.sha256`, `verify_archive.py` | SHA-256 manifest of the tree and its verifier. |
 
@@ -135,7 +135,9 @@ data is present.
 Third-party resources referenced by the implementation but not redistributed here:
 
 - **MALOnt** (malware ontology vocabulary alignment) - https://github.com/aiforsec/MALOnt
-- **CTI-HAL** (human-annotated CTI dataset; not used for hosted processing here) -
+- **CTI-HAL** (human-annotated CTI dataset; supplied the contexts of the earlier, superseded
+  stress run whose aggregate reanalysis is retained in `hosted_audit/cluster_analysis/`. It is
+  not used by the reported round-3 run and no CTI-HAL text is redistributed here) -
   paper record at https://doi.org/10.1109/EuroSPW67616.2025.00014
 - **Pellet** (delivered inside the OWL API distribution used by Owlready2) -
   https://github.com/stardog-union/pellet

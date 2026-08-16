@@ -12,16 +12,16 @@
   "members": [
     {
       "archive_path": "README.md",
-      "bytes": 1532,
-      "packaged_sha256": "0a3f7e4c33b908356f52703e846364aa2bded8de8da73d8e4f10620680a618a0",
+      "bytes": 3338,
+      "packaged_sha256": "b0414ad8d2ec59f37513cedb641f16dd261ffd14ce315daefe87b11933fc2842",
       "source": "generated",
       "source_sha256": null,
       "transformed_for_anonymity": false
     },
     {
       "archive_path": "cluster_analysis/README.md",
-      "bytes": 2830,
-      "packaged_sha256": "f375ce25929dd11e5f1ba5b6467d39fa779072d05e0a5eaa0c3fc6861387ea3b",
+      "bytes": 3491,
+      "packaged_sha256": "c1a3bd1329c7d0595c5fc6ac9156b1cc6cd4ea072664d98e810599344c6377e5",
       "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/README.md",
       "source_sha256": "f375ce25929dd11e5f1ba5b6467d39fa779072d05e0a5eaa0c3fc6861387ea3b",
       "transformed_for_anonymity": false
@@ -220,5 +220,5 @@
     }
   ],
   "package_id": "S2-hosted-audit-public-v2",
-  "scope_note": "source_sha256 identifies the local evidence file before path sanitization; packaged_sha256 verifies the public-safe copy"
+  "scope_note": "source_sha256 identifies the local evidence file before path sanitization; packaged_sha256 verifies the public-safe copy. cluster_analysis/README.md is its source README with the supersession note prepended, so its two digests differ by that note alone."
 }
