@@ -32,9 +32,7 @@ from experiment_support import (
 
 CONDITIONS = ("minimal_json", "typed_evidence", "typed_evidence_injection")
 DEFAULT_SOURCE_RUN = DEFAULT_RUNS_ROOT / "hosted_stress_20260809T211342Z"
-DEFAULT_SEMANTIC_RUN = (
-    DEFAULT_RUNS_ROOT / "semantic_benchmark_seed20260809_comprehensive"
-)
+DEFAULT_SEMANTIC_RUN = DEFAULT_RUNS_ROOT / "semantic_benchmark_seed20260809_comprehensive"
 DEFAULT_OUTPUT = DEFAULT_RUNS_ROOT / "hosted_clustered_reanalysis_20260809"
 DEFAULT_SEED = 20260809
 DEFAULT_BOOTSTRAP_REPLICATES = 10_000

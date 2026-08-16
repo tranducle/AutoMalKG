@@ -1,0 +1,175 @@
+{
+  "benchmark_scope": "author-created CC0 controlled design set",
+  "calls_missing_token_usage": 0,
+  "case_count_completed": 96,
+  "case_count_preregistered": 96,
+  "comparator_scope": "provider-native constrained decoding on the same pinned route as the reported Round-3 run; not a replication of that run",
+  "conditions": {
+    "constrained_minimal": {
+      "completed_calls": 48,
+      "contract_full_count": 15,
+      "contract_rejection_reasons": {
+        "JSONDecodeError": 3,
+        "relations[0] has dangling subject": 1,
+        "relations[0] object type Indicator is invalid for Uses": 1,
+        "relations[0] subject type Malware is invalid for Uses": 3,
+        "relations[0] subject type ThreatActor is invalid for AssociatedWith": 4,
+        "relations[0] subject type ThreatActor is invalid for HasIndicator": 3,
+        "relations[0] subject type ThreatActor is invalid for Targets": 9,
+        "relations[1] has dangling subject": 1,
+        "relations[1] object type Campaign is invalid for Uses": 1,
+        "relations[1] subject type ThreatActor is invalid for AssociatedWith": 5,
+        "relations[1] subject type ThreatActor is invalid for HasIndicator": 5,
+        "relations[2] subject type Campaign is invalid for Uses": 1
+      },
+      "contract_structural_count": 18,
+      "contract_structural_rate": 0.375,
+      "exact_prediction_repeat_stability_rate": 0.25,
+      "exact_raw_repeat_stability_rate": 0.0625,
+      "latency_seconds": {
+        "iqr": 7.590927499999996,
+        "median": 24.8907965,
+        "p95": 60.54064974999996
+      },
+      "repeat_groups": 16,
+      "schema_conformant_count": 45,
+      "schema_conformant_rate": 0.9375,
+      "status_distribution": {
+        "evidence_invalid": 3,
+        "malformed_json": 3,
+        "schema_invalid": 27,
+        "valid": 15
+      },
+      "valid_rate": 0.3125
+    },
+    "constrained_typed": {
+      "completed_calls": 48,
+      "contract_full_count": 40,
+      "contract_rejection_reasons": {
+        "relations[0] subject type ThreatActor is invalid for AssociatedWith": 3,
+        "relations[0] subject type ThreatActor is invalid for HasIndicator": 3,
+        "relations[0] subject type ThreatActor is invalid for Targets": 2,
+        "relations[1] subject type ThreatActor is invalid for AssociatedWith": 2,
+        "relations[2] subject type ThreatActor is invalid for HasIndicator": 2
+      },
+      "contract_structural_count": 40,
+      "contract_structural_rate": 0.8333333333333334,
+      "exact_prediction_repeat_stability_rate": 0.875,
+      "exact_raw_repeat_stability_rate": 0.75,
+      "latency_seconds": {
+        "iqr": 8.15971725,
+        "median": 28.9774415,
+        "p95": 41.2252254
+      },
+      "repeat_groups": 16,
+      "schema_conformant_count": 48,
+      "schema_conformant_rate": 1.0,
+      "status_distribution": {
+        "schema_invalid": 8,
+        "valid": 40
+      },
+      "valid_rate": 0.8333333333333334
+    }
+  },
+  "constrained_decoding": {
+    "response_format": {
+      "json_schema": {
+        "name": "automalkg_extraction",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "entities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "ThreatActor",
+                      "Malware",
+                      "Vulnerability",
+                      "Campaign",
+                      "Indicator"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "name",
+                  "evidence"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "relations": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "type": "string"
+                  },
+                  "object": {
+                    "type": "string"
+                  },
+                  "predicate": {
+                    "enum": [
+                      "Uses",
+                      "Targets",
+                      "AssociatedWith",
+                      "HasIndicator"
+                    ],
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "subject",
+                  "predicate",
+                  "object",
+                  "evidence"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "entities",
+            "relations"
+          ],
+          "type": "object"
+        },
+        "strict": true
+      },
+      "type": "json_schema"
+    },
+    "response_format_sha256": "504e57c64e950cd0dffdfc6c81761f13d61f0f8fde40c194a395467e92db2129"
+  },
+  "cost_accounting": {
+    "accounted_cost_usd": 0.20689535999999997,
+    "budget_usd": 1.0,
+    "provider_billing_may_differ": true
+  },
+  "known_cost_usd": 0.20689535999999997,
+  "real_world_cti_accuracy_claim_permitted": false,
+  "token_totals": {
+    "cached_tokens": 0,
+    "completion_tokens": 155775,
+    "prompt_tokens": 23448,
+    "reasoning_tokens": 132469,
+    "total_tokens": 179223
+  }
+}

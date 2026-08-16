@@ -1,4 +1,11 @@
-"""Generate manuscript tables and figures only from completed run artifacts."""
+"""Generate manuscript tables and figure data only from completed run artifacts.
+
+All three manuscript figures are hand-authored TikZ compiled from
+``Figures/acceptance_loop/*.tex``. This script no longer renders them: it emits
+the ``*_data.tex`` macro files those figures ``\\input``, so every plotted
+number still traces back to a run artifact and none is retyped. Rendering here
+as well would overwrite the TikZ output on the next run.
+"""
 
 from __future__ import annotations
 
@@ -9,22 +16,11 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, Sequence
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
-
-REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 PAPER_ROOT = Path(__file__).resolve().parents[1]
-if str(REPOSITORY_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPOSITORY_ROOT))
-
-from src.tools.academic_style import apply_style, figsize, find_overlaps, save_fig
 
 
 CONDITION_LABELS = {
-    "minimal_json": "Minimal JSON",
+    "minimal_json": "Minimal JSON (floor)",
     "typed_evidence": "Typed + evidence",
     "typed_evidence_injection": "Typed + evidence + injection",
 }
@@ -80,118 +76,44 @@ def fmt_ms(value: Any) -> str:
     return f"{float(value):.1f}"
 
 
-def assert_no_text_overlaps(fig: Any, name: str) -> None:
-    overlaps = find_overlaps(fig)
-    if overlaps:
-        rendered = "; ".join(str(item) for item in overlaps[:10])
-        raise RuntimeError(f"text overlap in {name}: {rendered}")
+#: Latin index letters for the generated TikZ macro names. LaTeX control
+#: sequences cannot contain digits, so condition/size slots are lettered.
+SLOT_LETTERS = ("A", "B", "C", "D", "E", "F", "G", "H")
 
 
-def make_architecture_figure(output_dir: Path) -> list[Path]:
-    """Render the implemented fail-closed state flow without efficacy claims."""
+def tex_number(value: float, decimals: int = 1) -> str:
+    """Format a value for a TikZ coordinate: no separators, fixed decimals."""
 
-    apply_style("double")
-    fig, ax = plt.subplots(figsize=figsize("double", ratio=0.53))
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.axis("off")
-
-    def box(
-        x: float,
-        y: float,
-        width: float,
-        height: float,
-        label: str,
-        *,
-        face: str = "#E6F2FA",
-        edge: str = "#0072B2",
-        fontsize: float = 7.4,
-    ) -> tuple[float, float]:
-        patch = FancyBboxPatch(
-            (x, y),
-            width,
-            height,
-            boxstyle="round,pad=0.012,rounding_size=0.018",
-            linewidth=1.0,
-            edgecolor=edge,
-            facecolor=face,
-            zorder=2,
-        )
-        ax.add_patch(patch)
-        ax.text(
-            x + width / 2,
-            y + height / 2,
-            label,
-            ha="center",
-            va="center",
-            fontsize=fontsize,
-            zorder=3,
-        )
-        return (x + width / 2, y + height / 2)
-
-    def arrow(
-        start: tuple[float, float],
-        end: tuple[float, float],
-        *,
-        color: str = "#4B5563",
-        linestyle: str = "solid",
-    ) -> None:
-        ax.add_patch(
-            FancyArrowPatch(
-                start,
-                end,
-                arrowstyle="-|>",
-                mutation_scale=9,
-                linewidth=1.0,
-                color=color,
-                linestyle=linestyle,
-                shrinkA=1,
-                shrinkB=1,
-                zorder=1,
-            )
-        )
-
-    box(0.02, 0.67, 0.15, 0.17, "Untrusted CTI\ntext chunks", face="#F2F4F7", edge="#6B7280")
-    box(0.22, 0.67, 0.15, 0.17, "Hosted LLM\nparser")
-    box(0.42, 0.67, 0.17, 0.17, "Parse + typed\nschema validation")
-    box(0.64, 0.67, 0.17, 0.17, "Canonical merge\n+ provenance")
-    box(0.83, 0.67, 0.15, 0.17, "Temporary OWL world\n+ Pellet")
-    arrow((0.17, 0.755), (0.22, 0.755))
-    arrow((0.37, 0.755), (0.42, 0.755))
-    arrow((0.59, 0.755), (0.64, 0.755))
-    arrow((0.81, 0.755), (0.83, 0.755))
-
-    box(0.07, 0.25, 0.20, 0.17, "STOP: extraction failure\n(parse/schema/provider)", face="#FCE8E6", edge="#D55E00")
-    box(0.35, 0.25, 0.18, 0.17, "STOP: INCONSISTENT\nor UNVERIFIED", face="#FCE8E6", edge="#D55E00")
-    box(0.60, 0.25, 0.17, 0.17, "PASS: CONSISTENT\napply Rule 1", face="#E7F5EF", edge="#009E73")
-    box(0.83, 0.25, 0.15, 0.17, "PASS: graph +\nproof ledger", face="#E7F5EF", edge="#009E73")
-    arrow((0.505, 0.67), (0.17, 0.42), color="#D55E00", linestyle="dashed")
-    arrow((0.905, 0.67), (0.44, 0.42), color="#D55E00", linestyle="dashed")
-    arrow((0.905, 0.67), (0.685, 0.42), color="#009E73")
-    arrow((0.77, 0.335), (0.83, 0.335), color="#009E73")
-
-    label_box = {"facecolor": "white", "alpha": 0.92, "edgecolor": "none", "pad": 1.2}
-    ax.text(0.305, 0.52, "typed failure; no graph", ha="center", va="center", fontsize=7.4, color="#9A3412", bbox=label_box)
-    ax.text(0.655, 0.52, "fail closed", ha="center", va="center", fontsize=7.4, color="#9A3412", bbox=label_box)
-    ax.text(0.86, 0.52, "verified status only", ha="center", va="center", fontsize=7.4, color="#006B4F", bbox=label_box)
-    ax.text(
-        0.5,
-        0.07,
-        "Structural consistency is not factual verification; well-typed false claims can pass.",
-        ha="center",
-        va="center",
-        fontsize=7.4,
-        fontstyle="italic",
-        color="#374151",
-    )
-    fig.tight_layout(pad=0.2)
-    assert_no_text_overlaps(fig, "architecture_contract")
-    return save_fig(fig, output_dir / "architecture_contract", dpi=600)
+    return f"{value:.{decimals}f}"
 
 
-def make_semantic_scaling_figure(
-    predictions: Sequence[dict[str, Any]], output_dir: Path
-) -> list[Path]:
+def tex_display(value: float, decimals: int = 1) -> str:
+    """Format a value for a printed label: thousands separators, fixed decimals."""
+
+    return f"{value:,.{decimals}f}"
+
+
+def quantile(sorted_values: Sequence[float], fraction: float) -> float:
+    """Linear-interpolation quantile, matching numpy's default `linear` method."""
+
+    if not sorted_values:
+        raise ValueError("no observations")
+    position = fraction * (len(sorted_values) - 1)
+    lower = int(position)
+    upper = min(lower + 1, len(sorted_values) - 1)
+    weight = position - lower
+    return sorted_values[lower] * (1.0 - weight) + sorted_values[upper] * weight
+
+
+def write_semantic_scaling_data(
+    predictions: Sequence[dict[str, Any]], target: Path
+) -> dict[int, dict[str, float]]:
+    """Emit the box statistics for the scaling figure as TikZ macros.
+
+    The figure body is hand-authored TikZ (``semantic_scaling.tex``); only the
+    numbers cross this boundary, so no observation is ever retyped by hand.
+    """
+
     by_size: dict[int, list[float]] = defaultdict(list)
     for row in predictions:
         if row.get("family") != "scale" or row.get("warmup"):
@@ -200,78 +122,115 @@ def make_semantic_scaling_figure(
     sizes = sorted(by_size)
     if not sizes or any(len(by_size[size]) < 2 for size in sizes):
         raise RuntimeError("semantic scaling predictions are incomplete")
+    if len(sizes) > len(SLOT_LETTERS):
+        raise RuntimeError(f"too many graph sizes for the TikZ macro slots: {len(sizes)}")
 
-    apply_style("single")
-    fig, ax = plt.subplots(figsize=figsize("single", ratio=0.76))
-    box = ax.boxplot(
-        [by_size[size] for size in sizes],
-        tick_labels=[f"{size:,}" for size in sizes],
-        patch_artist=True,
-        widths=0.58,
-        showfliers=True,
-        medianprops={"color": "#D55E00", "linewidth": 1.5},
-        whiskerprops={"color": "#4B5563"},
-        capprops={"color": "#4B5563"},
-        boxprops={"edgecolor": "#0072B2", "linewidth": 1.0},
-        flierprops={"marker": "o", "markersize": 2.5, "markerfacecolor": "#0072B2"},
-    )
-    for patch in box["boxes"]:
-        patch.set_facecolor("#56B4E9")
-        patch.set_alpha(0.42)
-    ax.set_xlabel("Licensed chains (two asserted relations per chain)")
-    ax.set_ylabel("Pellet runtime (ms)")
-    ax.set_title("Local OWL/SWRL runtime distribution (10 repetitions per size)")
-    ax.set_axisbelow(True)
-    fig.tight_layout()
-    assert_no_text_overlaps(fig, "semantic_scaling")
-    return save_fig(fig, output_dir / "semantic_scaling", dpi=600)
-
-
-def make_hosted_contract_figure(metrics: dict[str, Any], output_dir: Path) -> list[Path]:
-    conditions = list(CONDITION_LABELS)
-    rows = [metrics["conditions"][condition] for condition in conditions]
-    valid = [100.0 * float(row["valid_rate"]) for row in rows]
-    prediction_stability = [
-        100.0 * float(row["exact_prediction_repeat_stability_rate"]) for row in rows
+    stats: dict[int, dict[str, float]] = {}
+    lines = [
+        "% GENERATED by src/generate_acceptance_artifacts.py -- do not edit by hand.",
+        "% Source: semantic benchmark predictions.jsonl (family=scale, warmup excluded).",
+        f"\\def\\ScaleSlots{{{len(sizes)}}}",
     ]
-
-    apply_style("single")
-    fig, ax = plt.subplots(figsize=figsize("single", ratio=0.80))
-    x = list(range(len(conditions)))
-    width = 0.34
-    ax.bar(
-        [value - width / 2 for value in x],
-        valid,
-        width,
-        label="Valid responses",
-        color="#0072B2",
-    )
-    ax.bar(
-        [value + width / 2 for value in x],
-        prediction_stability,
-        width,
-        label="Canonical-response stability (14 groups)",
-        color="#E69F00",
-    )
-    ax.set_xticks(x, ["Minimal\nJSON", "Typed +\nevidence", "Typed + evidence\n+ injection"])
-    ax.set_ylabel("Rate (%)")
-    ax.set_ylim(0, 105)
-    ax.set_title("Hosted response-contract stress")
-    for index, row in enumerate(rows):
-        stable_count = int(round(14 * float(row["exact_prediction_repeat_stability_rate"])))
-        ax.text(
-            index + width / 2,
-            prediction_stability[index] + 2.0,
-            f"{stable_count}/14",
-            ha="center",
-            va="bottom",
-            fontsize=7.0,
+    for letter, size in zip(SLOT_LETTERS, sizes):
+        values = sorted(by_size[size])
+        q1 = quantile(values, 0.25)
+        median = quantile(values, 0.50)
+        q3 = quantile(values, 0.75)
+        iqr = q3 - q1
+        inner_low = q1 - 1.5 * iqr
+        inner_high = q3 + 1.5 * iqr
+        whisker_low = min(value for value in values if value >= inner_low)
+        whisker_high = max(value for value in values if value <= inner_high)
+        outliers = [value for value in values if value < inner_low or value > inner_high]
+        p95 = quantile(values, 0.95)
+        stats[size] = {
+            "n": float(len(values)),
+            "q1": q1,
+            "median": median,
+            "q3": q3,
+            "iqr": iqr,
+            "whisker_low": whisker_low,
+            "whisker_high": whisker_high,
+            "p95": p95,
+            "outlier_count": float(len(outliers)),
+        }
+        lines.extend(
+            [
+                f"\\def\\Scale{letter}Size{{{size}}}",
+                f"\\def\\Scale{letter}Tick{{{size:,}}}",
+                f"\\def\\Scale{letter}N{{{len(values)}}}",
+                f"\\def\\Scale{letter}Lo{{{tex_number(whisker_low)}}}",
+                f"\\def\\Scale{letter}Qone{{{tex_number(q1)}}}",
+                f"\\def\\Scale{letter}Med{{{tex_number(median)}}}",
+                f"\\def\\Scale{letter}Qthree{{{tex_number(q3)}}}",
+                f"\\def\\Scale{letter}Hi{{{tex_number(whisker_high)}}}",
+                f"\\def\\Scale{letter}MedLabel{{{tex_display(median)}}}",
+                f"\\def\\Scale{letter}IqrLabel{{{tex_display(iqr)}}}",
+                f"\\def\\Scale{letter}PfiveLabel{{{tex_display(p95)}}}",
+                # Count first: \foreach over an empty list still runs one
+                # iteration, so the figure guards the loop on this.
+                f"\\def\\Scale{letter}OutlierCount{{{len(outliers)}}}",
+                f"\\def\\Scale{letter}Outliers{{{','.join(tex_number(v) for v in outliers)}}}",
+            ]
         )
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.20), ncol=1)
-    ax.set_axisbelow(True)
-    fig.subplots_adjust(bottom=0.32, left=0.18, right=0.98, top=0.88)
-    assert_no_text_overlaps(fig, "hosted_contract")
-    return save_fig(fig, output_dir / "hosted_contract", dpi=600)
+    lines.append("")
+    target.write_text("\n".join(lines), encoding="utf-8")
+    return stats
+
+
+def write_hosted_contract_data(metrics: dict[str, Any], target: Path) -> dict[str, dict[str, Any]]:
+    """Emit the hosted-condition rates for the contract figure as TikZ macros.
+
+    Both the percentage (bar length) and the ``count/denominator`` label are
+    derived here, so the figure cannot show a rate whose denominator drifts
+    from the run artifact -- the failure this figure shipped with once already.
+    """
+
+    conditions = list(CONDITION_LABELS)
+    rows = {condition: metrics["conditions"][condition] for condition in conditions}
+    summary: dict[str, dict[str, Any]] = {}
+    lines = [
+        "% GENERATED by src/generate_acceptance_artifacts.py -- do not edit by hand.",
+        "% Source: hosted run metrics.json (conditions block).",
+        f"\\def\\HostedSlots{{{len(conditions)}}}",
+    ]
+    for letter, condition in zip(SLOT_LETTERS, conditions):
+        row = rows[condition]
+        calls = int(row["completed_calls"])
+        groups = int(row["repeat_groups"])
+        valid_rate = float(row["valid_rate"])
+        stable_rate = float(row["exact_prediction_repeat_stability_rate"])
+        valid_count = int(round(calls * valid_rate))
+        stable_count = int(round(groups * stable_rate))
+        summary[condition] = {
+            "valid": f"{valid_count}/{calls}",
+            "stable": f"{stable_count}/{groups}",
+            "valid_pct": 100.0 * valid_rate,
+            "stable_pct": 100.0 * stable_rate,
+            "attack_success_count": int(row["attack_success_count"]),
+        }
+        lines.extend(
+            [
+                f"\\def\\Hosted{letter}Name{{{CONDITION_LABELS[condition]}}}",
+                f"\\def\\Hosted{letter}ValidPct{{{tex_number(100.0 * valid_rate)}}}",
+                f"\\def\\Hosted{letter}ValidLabel{{{valid_count}/{calls}}}",
+                f"\\def\\Hosted{letter}StablePct{{{tex_number(100.0 * stable_rate)}}}",
+                f"\\def\\Hosted{letter}StableLabel{{{stable_count}/{groups}}}",
+            ]
+        )
+    denominators = {int(row["completed_calls"]) for row in rows.values()}
+    group_counts = {int(row["repeat_groups"]) for row in rows.values()}
+    if len(denominators) != 1 or len(group_counts) != 1:
+        raise RuntimeError("hosted conditions do not share a common denominator")
+    lines.extend(
+        [
+            f"\\def\\HostedCalls{{{denominators.pop()}}}",
+            f"\\def\\HostedGroups{{{group_counts.pop()}}}",
+            "",
+        ]
+    )
+    target.write_text("\n".join(lines), encoding="utf-8")
+    return summary
 
 
 def write_semantic_table(metrics: dict[str, Any], target: Path) -> None:
@@ -318,6 +277,51 @@ def write_hosted_table(metrics: dict[str, Any], target: Path) -> None:
             f"{fmt_rate(row['exact_prediction_repeat_stability_rate'])} & "
             f"{fmt_ms(latency['median'] * 1000 if latency['median'] is not None else None)} & "
             f"{fmt_ms(latency['p95'] * 1000 if latency['p95'] is not None else None)} \\\\"
+        )
+    lines.extend([r"\bottomrule", r"\end{tabular}", ""])
+    target.write_text("\n".join(lines), encoding="utf-8")
+
+
+#: Labels for the provider-native constrained-decoding comparator. This is a
+#: separate run from the reported Round-3 benchmark and is never merged into
+#: ``write_hosted_table``: the two differ in call count, condition set and
+#: date, so one table holding both would invite a comparison neither run was
+#: designed to license.
+CONSTRAINED_CONDITION_LABELS = {
+    "constrained_minimal": "Minimal + provider schema (floor)",
+    "constrained_typed": "Typed + evidence + provider schema",
+}
+
+
+def write_constrained_table(metrics: dict[str, Any], target: Path) -> None:
+    """Write the provider-native constrained-decoding comparator table.
+
+    The two rate columns are the point of the exhibit: schema-conformance is
+    what the provider enforces, contract-validity is what AutoMalKG enforces,
+    and the gap between them is the part of the contract JSON Schema cannot
+    express.
+    """
+
+    lines = [
+        "% GENERATED FILE -- do not edit by hand.",
+        "% Producer: src/generate_acceptance_artifacts.py (write_constrained_table)",
+        "% Source run: reproduced_runs/"
+        "hosted_constrained_decoding_20260816T223352Z",
+        r"\begin{tabular}{l@{\hspace{0.8em}}rrrr}",
+        r"\toprule",
+        r"\textbf{Constrained condition} & \textbf{Calls} & "
+        r"\textbf{Schema-conformant (\%)} & \textbf{Contract-valid (\%)} & "
+        r"\textbf{Median (ms)} \\",
+        r"\midrule",
+    ]
+    for condition, label in CONSTRAINED_CONDITION_LABELS.items():
+        row = metrics["conditions"][condition]
+        latency = row["latency_seconds"]
+        lines.append(
+            f"{label} & {row['completed_calls']} & "
+            f"{fmt_rate(row['schema_conformant_rate'])} & "
+            f"{fmt_rate(row['valid_rate'])} & "
+            f"{fmt_ms(latency['median'] * 1000 if latency['median'] is not None else None)} \\\\"
         )
     lines.extend([r"\bottomrule", r"\end{tabular}", ""])
     target.write_text("\n".join(lines), encoding="utf-8")
@@ -383,6 +387,7 @@ def generate(
     alternative_run: Path,
     clustered_run: Path,
     output_dir: Path,
+    constrained_run: Path | None = None,
 ) -> dict[str, Any]:
     require_completed_hosted_run(hosted_run)
     semantic_metrics = read_json(semantic_run / "metrics.json")
@@ -394,9 +399,11 @@ def generate(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     written: list[Path] = []
-    written.extend(make_architecture_figure(output_dir))
-    written.extend(make_semantic_scaling_figure(semantic_predictions, output_dir))
-    written.extend(make_hosted_contract_figure(hosted_metrics, output_dir))
+    scaling_data = output_dir / "semantic_scaling_data.tex"
+    hosted_data = output_dir / "hosted_contract_data.tex"
+    write_semantic_scaling_data(semantic_predictions, scaling_data)
+    write_hosted_contract_data(hosted_metrics, hosted_data)
+    written.extend([scaling_data, hosted_data])
     semantic_table = output_dir / "semantic_results_table.tex"
     hosted_table = output_dir / "hosted_results_table.tex"
     alternative_table = output_dir / "alternative_ablation_table.tex"
@@ -406,6 +413,15 @@ def generate(
     write_alternative_table(alternative_metrics, alternative_table)
     write_e2e_attrition_table(e2e_metrics, e2e_table)
     written.extend([semantic_table, hosted_table, alternative_table, e2e_table])
+
+    # Optional: the comparator run post-dates the four tables above, so an
+    # invocation that omits it still regenerates the original set unchanged.
+    if constrained_run is not None:
+        require_completed_hosted_run(constrained_run)
+        constrained_metrics = read_json(constrained_run / "metrics.json")
+        constrained_table = output_dir / "constrained_decoding_table.tex"
+        write_constrained_table(constrained_metrics, constrained_table)
+        written.append(constrained_table)
 
     summary = {
         "semantic_run": artifact_path(semantic_run),
@@ -422,7 +438,7 @@ def generate(
             "clustered_metrics": artifact_path(clustered_run / "metrics.json"),
         },
         "outputs": [artifact_path(path) for path in written],
-        "figure_policy": "observation-level data only; shared academic_style; 600 dpi PNG plus vector PDF",
+        "figure_policy": "observation-level data only; figures are TikZ bodies that \\input the generated *_data.tex macros",
     }
     summary_path = output_dir / "artifact_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -438,6 +454,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--alternative-run", type=Path, required=True)
     parser.add_argument("--clustered-run", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--constrained-run", type=Path, default=None)
     return parser
 
 
@@ -452,6 +469,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.alternative_run,
                 args.clustered_run,
                 args.output_dir,
+                args.constrained_run,
             ),
             indent=2,
         )

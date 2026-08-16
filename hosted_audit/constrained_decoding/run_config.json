@@ -1,0 +1,120 @@
+{
+  "benchmark_dir": "./5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2",
+  "benchmark_id": "automalkg-round3-cc0-controlled-v2",
+  "budget_usd": 1.0,
+  "case_count": 96,
+  "case_count_completed": 96,
+  "case_ledger_sha256": "e164b365250cad46cba18df479ee183fcb5e188f58632f781cd74191282cbed9",
+  "claim_boundary": "controlled author-created design-set metrics only; no real-world CTI accuracy or generalization",
+  "conditions": [
+    "constrained_minimal",
+    "constrained_typed"
+  ],
+  "contexts": 16,
+  "finished_at": "2026-08-16T23:19:54+00:00",
+  "max_completion_tokens": 4096,
+  "prepared_at": "2026-08-16T22:33:53+00:00",
+  "pricing_snapshot_sha256": "c290cf5145d0f6c2b82c60eb0ab36bf8f663b8bef5ce66a730469d9f1691169c",
+  "projection": {
+    "case_count": 96,
+    "projected_upper_bound_usd": 0.53331072,
+    "prompt_token_estimator": "conservative UTF-8 byte-count prompt-token envelope (upper bound)"
+  },
+  "provider_contract": [
+    {
+      "provider": "openrouter_key_1",
+      "requested_model": "qwen/qwen3.7-plus"
+    }
+  ],
+  "provider_filter": "openrouter",
+  "repeats": 3,
+  "requested_model": "qwen/qwen3.7-plus",
+  "response_format": {
+    "json_schema": {
+      "name": "automalkg_extraction",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "entities": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "ThreatActor",
+                    "Malware",
+                    "Vulnerability",
+                    "Campaign",
+                    "Indicator"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "name",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "relations": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "type": "string"
+                },
+                "object": {
+                  "type": "string"
+                },
+                "predicate": {
+                  "enum": [
+                    "Uses",
+                    "Targets",
+                    "AssociatedWith",
+                    "HasIndicator"
+                  ],
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "subject",
+                "predicate",
+                "object",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "entities",
+          "relations"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "type": "json_schema"
+  },
+  "response_format_sha256": "504e57c64e950cd0dffdfc6c81761f13d61f0f8fde40c194a395467e92db2129",
+  "runner_snapshot_sha256": "ba0cf8bfbe178b3027bb19496b10624b56eff56a4d9ac14bca945cc9a60d1772",
+  "started_at": "2026-08-16T22:34:00+00:00",
+  "state": "completed"
+}

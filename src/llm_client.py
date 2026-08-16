@@ -344,8 +344,15 @@ class MultiModelClient:
         user_prompt: str,
         temperature: float = 0.0,
         max_completion_tokens: int | None = None,
+        response_format: Optional[Mapping[str, Any]] = None,
     ) -> LLMResponse:
-        """Return response text plus actual call metadata, or fail typed."""
+        """Return response text plus actual call metadata, or fail typed.
+
+        ``response_format`` is forwarded verbatim when supplied, which is how a
+        provider-native constrained-decoding condition is issued. Omitting it
+        reproduces the unconstrained request exactly, so runs recorded before
+        this parameter existed remain byte-comparable.
+        """
 
         if max_completion_tokens is not None and max_completion_tokens < 1:
             raise ValueError("max_completion_tokens must be positive when provided")
@@ -368,6 +375,8 @@ class MultiModelClient:
                 }
                 if max_completion_tokens is not None:
                     request_options["max_completion_tokens"] = max_completion_tokens
+                if response_format is not None:
+                    request_options["response_format"] = dict(response_format)
                 raw_response = await provider["client"].chat.completions.create(
                     **request_options,
                 )

@@ -12,8 +12,8 @@
   "members": [
     {
       "archive_path": "README.md",
-      "bytes": 3338,
-      "packaged_sha256": "b0414ad8d2ec59f37513cedb641f16dd261ffd14ce315daefe87b11933fc2842",
+      "bytes": 4292,
+      "packaged_sha256": "c2cabee6a95f45b597048c2e9a2ef09fae89083844a578c095b1580d498b22bb",
       "source": "generated",
       "source_sha256": null,
       "transformed_for_anonymity": false
@@ -73,6 +73,46 @@
       "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_clustered_reanalysis_20260809/source_integrity.json",
       "source_sha256": "c8c98935215485be536eb441e02e2daeedcd11e8133447bc34dc083eaca36086",
       "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "constrained_decoding/executed_run_hosted_constrained_decoding.py",
+      "bytes": 29070,
+      "packaged_sha256": "ba0cf8bfbe178b3027bb19496b10624b56eff56a4d9ac14bca945cc9a60d1772",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/executed_run_hosted_constrained_decoding.py",
+      "source_sha256": "ba0cf8bfbe178b3027bb19496b10624b56eff56a4d9ac14bca945cc9a60d1772",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "constrained_decoding/manifest.json",
+      "bytes": 2137,
+      "packaged_sha256": "5f4f69887fc7de5a0b2d576fec614d1a82446a061b3996c89dc2b4bd25b66ec1",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/manifest.json",
+      "source_sha256": "07075fd56a278db4d99f01eca2e898323404ab7b16caae0c93423fee858a2cca",
+      "transformed_for_anonymity": true
+    },
+    {
+      "archive_path": "constrained_decoding/metrics.json",
+      "bytes": 5799,
+      "packaged_sha256": "abc68a31a4bb7c85719af6e4de497b91b0109389372b56750a35729598fc0fbf",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/metrics.json",
+      "source_sha256": "abc68a31a4bb7c85719af6e4de497b91b0109389372b56750a35729598fc0fbf",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "constrained_decoding/pricing_snapshot.json",
+      "bytes": 714,
+      "packaged_sha256": "c290cf5145d0f6c2b82c60eb0ab36bf8f663b8bef5ce66a730469d9f1691169c",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/pricing_snapshot.json",
+      "source_sha256": "c290cf5145d0f6c2b82c60eb0ab36bf8f663b8bef5ce66a730469d9f1691169c",
+      "transformed_for_anonymity": false
+    },
+    {
+      "archive_path": "constrained_decoding/run_config.json",
+      "bytes": 3552,
+      "packaged_sha256": "a3c8b63c0ce1438969c132d4a11a89c06981598598e6d78666180feaa3861000",
+      "source": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/run_config.json",
+      "source_sha256": "867c9efa7a18ad706ca79a2ba53934611399a4c3fc188f87de2946573372db12",
+      "transformed_for_anonymity": true
     },
     {
       "archive_path": "hosted_run/credential_scan_post_execution.json",

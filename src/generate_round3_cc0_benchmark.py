@@ -18,7 +18,11 @@ from run_hosted_stress import evaluate_response, stable_hash
 
 EXPECTED_CONTEXT_COUNT = 16
 EXPECTED_NEGATIVE_CONTROLS = 2
-DEFAULT_SOURCE = PAPER_ROOT / "benchmark" / "round3_cc0" / "author_source.json"
+DEFAULT_SOURCE = (
+    PAPER_ROOT
+    / "benchmark" / "round3_cc0"
+    / "author_source.json"
+)
 DEFAULT_OUTPUT = DEFAULT_SOURCE.parent
 ENTITY_TYPES = {"ThreatActor", "Malware", "Vulnerability", "Campaign", "Indicator"}
 RELATION_SIGNATURES = {

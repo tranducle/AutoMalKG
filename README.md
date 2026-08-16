@@ -36,12 +36,12 @@ every structural check.
 | Path | Contents |
 | --- | --- |
 | `src/` | The complete Python implementation: contract validation, canonical merge, Pellet integration, benchmark/runners for every experiment, and the supplement builder. |
-| `tests/` | The 107-test regression suite (typed failures, reasoner states, identity collisions, provenance union, frozen-response replay guards, staged ablation, injection isolation). |
+| `tests/` | The 109-test regression suite (typed failures, reasoner states, identity collisions, provenance union, frozen-response replay guards, staged ablation, injection isolation, supplement-packaging guards). |
 | `ontology/` | The code-exported OWL/SWRL schema (`automalkg_schema.owl`). |
 | `benchmark/round3_cc0/` | The 16 CC0-1.0 evaluation contexts with gold annotations, manifest, design ledger, and provenance statement. All names are fictitious; IPs use IANA documentation ranges. |
 | `evidence/semantic/` | Seeded OWL-consistency and SWRL-completion controls (25+25 cases each) with observations, metrics, and raw Pellet logs. |
 | `evidence/reachability/` | The 29-fixture offline stage ablation (26 violations + 3 controls), the 17-class OWL contradiction reachability matrix, and per-fixture Pellet logs. |
-| `hosted_audit/` | The public-safe audit projection of the frozen hosted run: exact prompts, executed runner snapshot, pre/post credential scans, pricing snapshot, per-call stage ledger (pseudonymized), paired-displacement analysis, and offline replay metrics. Self-verifying with its own manifest. Its `cluster_analysis/` subdirectory holds a **superseded** offline reanalysis of an earlier 126-call stress run over CTI-HAL contexts; it is labelled as such, retained for auditability, and is the source of no reported result. See `hosted_audit/README.md` for the full contents index. |
+| `hosted_audit/` | The public-safe audit projection of the two hosted runs: exact prompts, executed runner snapshots, pre/post credential scans, pricing snapshots, per-call stage ledger (pseudonymized), paired-displacement analysis, and offline replay metrics. Self-verifying with its own manifest. Its `constrained_decoding/` subdirectory holds the provider-native constrained-decoding comparator, including the verbatim `response_format` schema. Its `cluster_analysis/` subdirectory holds a **superseded** offline reanalysis of an earlier 126-call stress run over CTI-HAL contexts; it is labelled as such, retained for auditability, and is the source of no reported result. See `hosted_audit/README.md` for the full contents index. |
 | `requirements.txt` | Pinned direct dependencies for the artifact. |
 | `MANIFEST.sha256`, `verify_archive.py` | SHA-256 manifest of the tree and its verifier. |
 
@@ -63,7 +63,7 @@ From the repository root:
 # 1. Verify the tree against its manifest
 python3 verify_archive.py .
 
-# 2. Run the full regression suite (107 tests)
+# 2. Run the full regression suite (109 tests)
 python3 -m pytest -q
 
 # 3. Reproduce a minimal semantic benchmark (deterministic, seeded)
@@ -85,25 +85,32 @@ sensitive; contract and status outcomes are the reproducibility target.
 
 | Manuscript result | Where it comes from |
 | --- | --- |
-| 107/107 regression tests pass | `python3 -m pytest -q` |
+| 109/109 regression tests pass | `python3 -m pytest -q` |
 | Parse-only / strict JSON Schema / production acceptance of the 26 encoded violations (23 / 13 / 0) | `run_stage_reachability_ablation.py --fixtures-only`; recorded evidence in `evidence/reachability/` |
 | 0/17 OWL contradiction classes reachable from production-valid input; 17/17 by direct reasoner injection | reachability matrix in `evidence/reachability/` |
 | Pellet classifies 25/25 inconsistent and 25/25 consistent seeded controls; SWRL P/R/F1 = 1.00 with complete two-premise ledgers | `run_semantic_benchmark.py`; recorded evidence in `evidence/semantic/` |
 | Hosted validity 0/48, 47/48, 48/48; canary 0/48; paired displacement analysis | recorded in `hosted_audit/` (not re-executable here; see below) |
 | Frozen-response end-to-end attrition 95 schema-valid, 5 empty, 90 serialized, 12 Rule 1 inferences | recorded in `hosted_audit/offline_replay/` stage ledger |
+| Provider-native constrained decoding: 93/96 responses schema-conformant, 38 of those 93 still rejected by the contract | recorded in `hosted_audit/constrained_decoding/metrics.json` (not re-executable here; see below) |
 
 ## Hosted experiment: what is and is not included
 
 The hosted study issued 144 hash-locked calls (16 CC0 contexts x 3 conditions x 3 repeats,
 temperature 0, single pinned route) to one dated model checkpoint through a paid API account.
-This repository includes everything needed to audit and re-issue the run except the raw responses
-themselves:
+A later comparator run issued a further 96 calls (16 contexts x 2 conditions x 3 repeats) on the
+same pinned route with byte-identical system prompts, adding the provider's own strict
+`json_schema` constrained decoding on top of each prompt. The two are packaged separately and are
+not interleaved; the comparator is a separate experiment, not a replication of the first.
+This repository includes everything needed to audit and re-issue both runs except the raw
+responses themselves:
 
 **Included** (`hosted_audit/`): the exact system and user prompt construction (`prompts.json`,
 `executed_run_hosted_round3_cc0.py`), sanitized run configuration and pre-call manifest, per-call
 stage ledger with condition/repeat/status/hashes/counts, aggregate and paired-displacement
 metrics, pricing snapshot, scientific gate reports, and pre/post credential scans (both PASS with
-zero findings).
+zero findings). For the comparator (`hosted_audit/constrained_decoding/`): the executed runner
+snapshot, the sanitized run configuration carrying the verbatim `response_format` schema and its
+SHA-256, aggregate metrics at both acceptance levels, pricing snapshot, and manifest.
 
 **Excluded by design:** raw model responses and free-text predictions (bulk redistribution of a
 provider's model outputs is not clearly permitted by the terms under which they were obtained,
@@ -115,14 +122,15 @@ supplied the contexts of the earlier, superseded stress run reanalysed in
 can verify each one against the ledger digests; the authors retain the complete raw responses
 and will supply them to editors and reviewers on request.
 
-To re-issue the hosted run with your own credentials and account:
+To re-issue either hosted run with your own credentials and account:
 
 ```bash
 export OPENROUTER_API_KEY=...   # never committed; see .gitignore
-python3 src/run_hosted_round3_cc0.py --help
+python3 src/run_hosted_round3_cc0.py --help              # the 144-call study
+python3 src/run_hosted_constrained_decoding.py --help    # the 96-call comparator
 ```
 
-The runner is read-only against `benchmark/round3_cc0` and writes a fresh hash-locked run
+Both runners are read-only against `benchmark/round3_cc0` and write a fresh hash-locked run
 directory under `reproduced_runs/`.
 
 ## Benchmark provenance

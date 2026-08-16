@@ -41,12 +41,8 @@ from main_pipeline import run_pipeline
 from reasoning import MalOntReasoner
 
 
-DEFAULT_SOURCE_RUN = (
-    DEFAULT_RUNS_ROOT / "hosted_stress_20260809T211342Z"
-)
-DEFAULT_OUTPUT_DIR = (
-    DEFAULT_RUNS_ROOT / "hosted_end_to_end_replay_20260809"
-)
+DEFAULT_SOURCE_RUN = DEFAULT_RUNS_ROOT / "hosted_stress_20260809T211342Z"
+DEFAULT_OUTPUT_DIR = DEFAULT_RUNS_ROOT / "hosted_end_to_end_replay_20260809"
 STANDARD_GATE_SCRIPT = (
     PAPER_ROOT.parents[1]
     / ".agents"

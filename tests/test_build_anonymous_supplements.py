@@ -143,3 +143,52 @@ def test_scan_archive_rejects_unix_home_and_temporary_paths(tmp_path: Path):
 def test_internal_verifier_payload_has_no_external_dependencies():
     assert b"import requests" not in supplements.INTERNAL_VERIFIER
     assert b"MANIFEST.sha256" in supplements.INTERNAL_VERIFIER
+
+
+def test_hosted_readme_scopes_the_ctihal_statement_to_the_superseded_reanalysis():
+    """The exclusion paragraph must not read as though the CC0 corpus were withheld.
+
+    Its earlier wording listed "CTI-HAL text, source excerpts" among the
+    exclusions and then said licensing was not established, which contradicted
+    the manuscript's statement that all 16 evaluation contexts are
+    author-authored and CC0-dedicated.
+    """
+
+    readme = supplements._hosted_readme().decode("utf-8")
+
+    assert "The evaluation corpus is not withheld" in readme
+    assert "benchmark/round3_cc0/" in readme
+    assert "CC0-1.0" in readme
+    # The CTI-HAL statement survives, but bound to the superseded reanalysis.
+    ctihal = readme[readme.index("CTI-HAL, which the") :]
+    assert "superseded stress run projected in `cluster_analysis/`" in ctihal
+    assert "not on the reported round-3 run" in ctihal
+    # Every top-level member of the package is indexed.
+    for entry in (
+        "`prompts.json`",
+        "`hosted_run/`",
+        "`offline_replay/`",
+        "`cluster_analysis/`",
+        "`MANIFEST.sha256`",
+        "`PACKAGE_METADATA.json`",
+    ):
+        assert entry in readme
+
+
+def test_projected_cluster_readme_carries_the_supersession_note(tmp_path: Path):
+    paper_root = tmp_path / "paper"
+    source = paper_root / supplements.RUNS_REL / supplements.CLUSTER_RUN / "README.md"
+    source.parent.mkdir(parents=True)
+    body = "# Hosted Clustered Reanalysis\n\nBody line.\n"
+    source.write_text(body, encoding="utf-8")
+
+    payload = supplements._projected_cluster_readme(paper_root)
+    text = payload.data.decode("utf-8")
+
+    assert text.startswith("> **Superseded")
+    assert "hosted_stress_20260809T211342Z" in text
+    assert "hosted_round3_cc0_20260810T004042Z" in text
+    assert text.endswith(body)
+    # The frozen run directory is covered by its own manifest and stays untouched.
+    assert source.read_text(encoding="utf-8") == body
+    assert payload.source_sha256 == supplements.sha256_bytes(body.encode("utf-8"))

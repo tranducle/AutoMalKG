@@ -12,6 +12,7 @@ case-level stage ledger.
 | --- | --- |
 | `prompts.json` | System prompt and user-prompt construction template. |
 | `hosted_run/` | The reported run `hosted_round3_cc0_20260810T004042Z`: executed runner snapshot, sanitized run configuration, pre-call manifest, aggregate metrics, paired-displacement analysis, pricing snapshot, scientific gates, and pre/post credential scans. |
+| `constrained_decoding/` | The provider-native constrained-decoding comparator `hosted_constrained_decoding_20260816T223352Z`: executed runner snapshot, sanitized run configuration including the verbatim `response_format` schema and its SHA-256, aggregate metrics, pricing snapshot, and manifest.  Separate from `hosted_run/`: 96 calls, two conditions, run six days later on the same pinned route with byte-identical system prompts. |
 | `offline_replay/` | Frozen-response end-to-end replay: metrics, integrity gates, manifest, and the projected per-call stage ledger. |
 | `cluster_analysis/` | **Superseded, retained as a record.** Offline clustered reanalysis of the earlier 126-call hosted stress run. No result reported in the manuscript comes from it; see `cluster_analysis/README.md`. |
 | `MANIFEST.sha256`, `verify_archive.py` | SHA-256 manifest of this package and its verifier. |
@@ -48,6 +49,14 @@ and `{{INJECTION_NOTE}}` as the injection-note redaction;
 `executed_run_hosted_round3_cc0.py` is the exact historical prompt constructor.
 `paired_displacement.json` reports the paired clean-vs-injected displacement
 analysis (status, canonical graph, gold-score) for the 48 matched pairs.
+
+The constrained-decoding comparator is projected on the same terms: its per-call
+files (`cases.jsonl`, `predictions.jsonl`, `raw_responses.jsonl`,
+`failures.jsonl`) are withheld, while `run_config.json` carries the verbatim
+`response_format` schema, so the manipulation itself is reproducible from this
+package without republishing model text.  `metrics.json` reports both acceptance
+levels -- provider schema-conformance and contract-validity -- together with the
+per-diagnostic rejection tally that separates them.
 
 Verify an extracted package with:
 

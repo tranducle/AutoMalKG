@@ -42,7 +42,14 @@ REACHABILITY_RUN = "offline_stage_reachability_fixture_only_20260809_v6"
 HOSTED_RUN = "hosted_round3_cc0_20260810T004042Z"
 REPLAY_RUN = "hosted_end_to_end_replay_20260809_round3_v2"
 CLUSTER_RUN = "hosted_clustered_reanalysis_20260809"
-ROUND3_BENCHMARK_REL = Path("benchmark/round3_cc0")
+#: The provider-native constrained-decoding comparator. A separate run from
+#: HOSTED_RUN and packaged separately, because the two differ in call count,
+#: condition set and date; merging them under one directory would suggest a
+#: single experiment neither run was designed to be.
+CONSTRAINED_RUN = "hosted_constrained_decoding_20260816T223352Z"
+ROUND3_BENCHMARK_REL = Path(
+    "benchmark/round3_cc0"
+)
 
 TEXT_SUFFIXES = {
     ".json",
@@ -59,6 +66,10 @@ FORBIDDEN_MEMBER_PARTS = {
     "hosted_run/predictions.jsonl",
     "hosted_run/raw_responses.jsonl",
     "hosted_run/failures.jsonl",
+    "constrained_decoding/cases.jsonl",
+    "constrained_decoding/predictions.jsonl",
+    "constrained_decoding/raw_responses.jsonl",
+    "constrained_decoding/failures.jsonl",
     "cluster_analysis/injection_pairs.jsonl",
     "case_artifacts",
     "data/raw",
@@ -410,6 +421,7 @@ case-level stage ledger.
 | --- | --- |
 | `prompts.json` | System prompt and user-prompt construction template. |
 | `hosted_run/` | The reported run `hosted_round3_cc0_20260810T004042Z`: executed runner snapshot, sanitized run configuration, pre-call manifest, aggregate metrics, paired-displacement analysis, pricing snapshot, scientific gates, and pre/post credential scans. |
+| `constrained_decoding/` | The provider-native constrained-decoding comparator `hosted_constrained_decoding_20260816T223352Z`: executed runner snapshot, sanitized run configuration including the verbatim `response_format` schema and its SHA-256, aggregate metrics, pricing snapshot, and manifest.  Separate from `hosted_run/`: 96 calls, two conditions, run six days later on the same pinned route with byte-identical system prompts. |
 | `offline_replay/` | Frozen-response end-to-end replay: metrics, integrity gates, manifest, and the projected per-call stage ledger. |
 | `cluster_analysis/` | **Superseded, retained as a record.** Offline clustered reanalysis of the earlier 126-call hosted stress run. No result reported in the manuscript comes from it; see `cluster_analysis/README.md`. |
 | `MANIFEST.sha256`, `verify_archive.py` | SHA-256 manifest of this package and its verifier. |
@@ -427,7 +439,7 @@ establish response identity without republishing the text.
 author-authored contexts dedicated under CC0-1.0, and they are published in
 full -- with gold annotations, manifest, design ledger and dedication -- at
 `benchmark/round3_cc0/` in the artifact repository and at
-`5_Data_and_Experiments/acceptance_loop/round3_cc0_benchmark_v2/` in supplement
+`benchmark/round3_cc0/` in supplement
 S1.  Nothing here is held back for want of a licence to the evaluation
 contexts.
 
@@ -446,6 +458,14 @@ and `{{INJECTION_NOTE}}` as the injection-note redaction;
 `executed_run_hosted_round3_cc0.py` is the exact historical prompt constructor.
 `paired_displacement.json` reports the paired clean-vs-injected displacement
 analysis (status, canonical graph, gold-score) for the 48 matched pairs.
+
+The constrained-decoding comparator is projected on the same terms: its per-call
+files (`cases.jsonl`, `predictions.jsonl`, `raw_responses.jsonl`,
+`failures.jsonl`) are withheld, while `run_config.json` carries the verbatim
+`response_format` schema, so the manipulation itself is reproducible from this
+package without republishing model text.  `metrics.json` reports both acceptance
+levels -- provider schema-conformance and contract-validity -- together with the
+per-diagnostic rejection tally that separates them.
 
 Verify an extracted package with:
 
@@ -796,6 +816,20 @@ def build_s2_payload(paper_root: Path) -> list[PayloadFile]:
     ):
         files.append(
             payload_from_file(paper_root, hosted_rel / name, f"hosted_run/{name}")
+        )
+
+    constrained_rel = RUNS_REL / CONSTRAINED_RUN
+    for name in (
+        "executed_run_hosted_constrained_decoding.py",
+        "run_config.json",
+        "metrics.json",
+        "pricing_snapshot.json",
+        "manifest.json",
+    ):
+        files.append(
+            payload_from_file(
+                paper_root, constrained_rel / name, f"constrained_decoding/{name}"
+            )
         )
 
     replay_rel = RUNS_REL / REPLAY_RUN

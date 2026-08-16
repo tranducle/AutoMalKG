@@ -1,0 +1,62 @@
+{
+  "command": "run_hosted_constrained_decoding.py --execute ./5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z",
+  "conditions": [
+    "constrained_minimal",
+    "constrained_typed"
+  ],
+  "constrained_decoding": true,
+  "dependencies": {
+    "openai": "2.29.0"
+  },
+  "hash_policy": {
+    "algorithm": "sha256",
+    "manifest_self_hash": "excluded_by_definition_to_avoid_self-reference"
+  },
+  "inputs": [],
+  "java": {},
+  "os_hardware": {
+    "logical_cpu_count": 8,
+    "machine": "arm64",
+    "physical_memory_bytes": 17179869184,
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "outputs": [
+    {
+      "bytes": 12441,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/failures.jsonl",
+      "sha256": "6c9383c5e6f5d3333eb82f1c4e88b6a8d95d926cbddce9bf834cae6ae407fd69"
+    },
+    {
+      "bytes": 5799,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/metrics.json",
+      "sha256": "abc68a31a4bb7c85719af6e4de497b91b0109389372b56750a35729598fc0fbf"
+    },
+    {
+      "bytes": 243630,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/predictions.jsonl",
+      "sha256": "b4d9969817441f50446a4aa9330dacdd31a4d583ee30e2d1c9b273d18f574d37"
+    },
+    {
+      "bytes": 188926,
+      "path": "5_Data_and_Experiments/acceptance_loop/runs/hosted_constrained_decoding_20260816T223352Z/raw_responses.jsonl",
+      "sha256": "7f64a6261034d3bb13595cbc1cbee1a3e0d6a341c4b5127e1856b392cf026981"
+    }
+  ],
+  "project_git_commit": "7456ce9a9b126c45c22a51ebfa3a0e61c531f8bd",
+  "provider": null,
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.5"
+  },
+  "resolved_model": null,
+  "run_id": "hosted_constrained_decoding_20260816T223352Z",
+  "schema_version": "1.0",
+  "seed": 20260809,
+  "timestamps": {
+    "finished_at": "2026-08-16T23:19:54+00:00",
+    "started_at": "2026-08-16T22:34:00+00:00"
+  }
+}
