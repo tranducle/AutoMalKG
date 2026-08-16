@@ -109,9 +109,11 @@ zero findings).
 provider's model outputs is not clearly permitted by the terms under which they were obtained,
 and the SHA-256 digests in the stage ledger already establish response identity without
 republishing text); API credentials (never present); CTI-HAL source text (third-party licensing
-for hosted processing was not established; the manuscript's related work uses it for context
-only). A holder of the raw responses can verify each one against the ledger digests; the authors
-retain the complete raw responses and will supply them to editors and reviewers on request.
+for hosted processing was not established, so no CTI-HAL text is redistributed here; the corpus
+supplied the contexts of the earlier, superseded stress run reanalysed in
+`hosted_audit/cluster_analysis/`, and no reported result uses it). A holder of the raw responses
+can verify each one against the ledger digests; the authors retain the complete raw responses
+and will supply them to editors and reviewers on request.
 
 To re-issue the hosted run with your own credentials and account:
 
